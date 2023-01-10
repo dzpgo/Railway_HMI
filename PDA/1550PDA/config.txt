@@ -1,0 +1,9 @@
+#手持机后台服务地址
+PDA.Proxy=iPlature/PDA -t -e 1.0 :tcp -h 192.168.10.100 -p 12222
+
+#通讯超时时间设定
+Ice.Override.ConnectTimeout = 4000
+
+#默认设置
+Ice.ImplicitContext=Shared
+Ice.Default.EncodingVersion=1.0

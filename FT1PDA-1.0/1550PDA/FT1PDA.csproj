@@ -1,0 +1,400 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="3.5">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.21022</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{26B5165F-2B15-46B1-9F05-157DB2DD53E5}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>_1550PDA</RootNamespace>
+    <AssemblyName>FT1PDA</AssemblyName>
+    <ProjectTypeGuids>{4D628B5B-2FBC-4AA6-8C16-197242AEB884};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <PlatformFamilyName>PocketPC</PlatformFamilyName>
+    <PlatformID>4118C335-430C-497f-BE48-11C3316B135E</PlatformID>
+    <OSVersion>5.01</OSVersion>
+    <DeployDirSuffix>_1550PDA</DeployDirSuffix>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <NativePlatformName>Windows Mobile 5.0 Pocket PC SDK</NativePlatformName>
+    <FormFactorID>
+    </FormFactorID>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;$(PlatformFamilyName)</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <FileAlignment>512</FileAlignment>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;$(PlatformFamilyName)</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <FileAlignment>512</FileAlignment>
+    <WarningLevel>4</WarningLevel>
+    <GenerateSerializationAssemblies>Off</GenerateSerializationAssemblies>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ClsZJFTPtrNet, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Library\ZJFTPtr\ClsZJFTPtrNet.dll</HintPath>
+    </Reference>
+    <Reference Include="CltsSlice4NetCf, Version=1.0.6562.32942, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\Library\CLTS\Net3.5CF\CltsSlice4NetCf.dll</HintPath>
+    </Reference>
+    <Reference Include="Ice, Version=3.5.1.0, Culture=neutral, PublicKeyToken=cdd571ade22f2f16, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Ice.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\log4net-1.2.10\bin\netcf\1.0\release\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="mscorlib" />
+    <Reference Include="PsionTeklogixNet, Version=5.2.14917.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\PsionTeklogixNet.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BarcodeFormater.cs" />
+    <Compile Include="cityFrm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="cityFrm.designer.cs">
+      <DependentUpon>cityFrm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreatUserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreatUserForm.Designer.cs">
+      <DependentUpon>CreatUserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataGridFormatCell.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="DeleteUserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeleteUserForm.Designer.cs">
+      <DependentUpon>DeleteUserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmXZhang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmXZhang.Designer.cs">
+      <DependentUpon>FrmXZhang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InventoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InventoryForm.Designer.cs">
+      <DependentUpon>InventoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory_Check.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventory_Check.Designer.cs">
+      <DependentUpon>Inventory_Check.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory_Diff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventory_Diff.Designer.cs">
+      <DependentUpon>Inventory_Diff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory_Empty.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventory_Empty.Designer.cs">
+      <DependentUpon>Inventory_Empty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LocalScanInfo.cs" />
+    <Compile Include="LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MatInf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MatInf.Designer.cs">
+      <DependentUpon>MatInf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModifyUserForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModifyUserForm.Designer.cs">
+      <DependentUpon>ModifyUserForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Package.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Package.Designer.cs">
+      <DependentUpon>Package.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory_Single.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventory_Single.Designer.cs">
+      <DependentUpon>Inventory_Single.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PreSendForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PreSendForm.Designer.cs">
+      <DependentUpon>PreSendForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="cityFrm.resx">
+      <DependentUpon>cityFrm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreatUserForm.resx">
+      <DependentUpon>CreatUserForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeleteUserForm.resx">
+      <DependentUpon>DeleteUserForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmXZhang.resx">
+      <DependentUpon>FrmXZhang.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InventoryForm.resx">
+      <DependentUpon>InventoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventory_Check.resx">
+      <DependentUpon>Inventory_Check.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventory_Diff.resx">
+      <DependentUpon>Inventory_Diff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventory_Empty.resx">
+      <DependentUpon>Inventory_Empty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MatInf.resx">
+      <DependentUpon>MatInf.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModifyUserForm.resx">
+      <DependentUpon>ModifyUserForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Package.resx">
+      <DependentUpon>Package.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventory_Single.resx">
+      <DependentUpon>Inventory_Single.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PreSendForm.resx">
+      <DependentUpon>PreSendForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShemeInCoilINF.resx">
+      <DependentUpon>ShemeInCoilINF.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShemeInForm.resx">
+      <DependentUpon>ShemeInForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShemeInFrom_Tai.resx">
+      <DependentUpon>ShemeInFrom_Tai.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShemeOut.resx">
+      <DependentUpon>ShemeOut.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShemeOutAssemble.resx">
+      <DependentUpon>ShemeOutAssemble.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShemeOutSearch.resx">
+      <DependentUpon>ShemeOutSearch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StockForm.resx">
+      <DependentUpon>StockForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShemeInTruck.resx">
+      <DependentUpon>ShemeInTruck.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="subFrmXZ.resx">
+      <DependentUpon>subFrmXZ.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserManageForm.resx">
+      <DependentUpon>UserManageForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserManagerForm.resx">
+      <DependentUpon>UserManagerForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xiaozhang.resx">
+      <DependentUpon>xiaozhang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="YesOrNoForm.resx">
+      <DependentUpon>YesOrNoForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Inventory_Lock.resx">
+      <DependentUpon>Inventory_Lock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManualScanForm.resx">
+      <DependentUpon>ManualScanForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="ScannerHelper.cs" />
+    <Compile Include="ShemeInCoilINF.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShemeInCoilINF.Designer.cs">
+      <DependentUpon>ShemeInCoilINF.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShemeInForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShemeInForm.Designer.cs">
+      <DependentUpon>ShemeInForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShemeInFrom_Tai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShemeInFrom_Tai.Designer.cs">
+      <DependentUpon>ShemeInFrom_Tai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShemeOut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShemeOut.Designer.cs">
+      <DependentUpon>ShemeOut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShemeOutAssemble.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShemeOutAssemble.Designer.cs">
+      <DependentUpon>ShemeOutAssemble.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShemeOutSearch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShemeOutSearch.Designer.cs">
+      <DependentUpon>ShemeOutSearch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StockForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StockForm.Designer.cs">
+      <DependentUpon>StockForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShemeInTruck.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShemeInTruck.Designer.cs">
+      <DependentUpon>ShemeInTruck.cs</DependentUpon>
+    </Compile>
+    <Compile Include="subFrmXZ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="subFrmXZ.Designer.cs">
+      <DependentUpon>subFrmXZ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SysTimeUtil.cs" />
+    <Compile Include="UserManageForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserManageForm.Designer.cs">
+      <DependentUpon>UserManageForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserManagerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserManagerForm.Designer.cs">
+      <DependentUpon>UserManagerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="xiaozhang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="xiaozhang.designer.cs">
+      <DependentUpon>xiaozhang.cs</DependentUpon>
+    </Compile>
+    <Compile Include="YesOrNoForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="YesOrNoForm.designer.cs">
+      <DependentUpon>YesOrNoForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inventory_Lock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inventory_Lock.Designer.cs">
+      <DependentUpon>Inventory_Lock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ManualScanForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManualScanForm.designer.cs">
+      <DependentUpon>ManualScanForm.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CompactFramework.CSharp.targets" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}">
+        <HostingProcess disable="1" />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

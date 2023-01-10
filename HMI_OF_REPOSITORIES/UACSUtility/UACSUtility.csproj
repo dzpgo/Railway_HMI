@@ -1,0 +1,96 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0A64A373-D92B-4A58-957B-074F196F5B5A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UACSUtility</RootNamespace>
+    <AssemblyName>UACSUtility</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\..\A_WTBin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Baosight.iSuperframe.Authorization">
+      <HintPath>..\..\..\..\..\vsts\ZJ1550\Source\UACS_HMI\HMI_OF_REPOSITORIES\MODEL_OF_REPOSITORIES\bin\Debug\Baosight.iSuperframe.Authorization.dll</HintPath>
+    </Reference>
+    <Reference Include="Baosight.iSuperframe.Authorization.Interface">
+      <HintPath>..\MODEL_OF_REPOSITORIES\bin\Debug\Baosight.iSuperframe.Authorization.Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="Baosight.iSuperframe.Common">
+      <HintPath>C:\iPlature\SF_HOME\Baosight.iSuperframe.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Baosight.iSuperframe.TagService.Controls, Version=1.0.5634.30853, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\SF_HOME\Baosight.iSuperframe.TagService.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Baosight.iSuperframe.TagService.Interface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\SF_HOME\Baosight.iSuperframe.TagService.Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="IBM.Data.DB2, Version=9.0.0.2, Culture=neutral, PublicKeyToken=7c307b91aa13d208, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\MODEL_OF_REPOSITORIES\bin\Debug\IBM.Data.DB2.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.XML" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ColorSln.cs" />
+    <Compile Include="CraneOrderImpl.cs" />
+    <Compile Include="DataBaseHelper.cs" />
+    <Compile Include="HMILogger.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RulesAssign.cs" />
+    <Compile Include="StringUtility.cs" />
+    <Compile Include="SubFrmUserLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubFrmUserLogin.Designer.cs">
+      <DependentUpon>SubFrmUserLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="SubFrmUserLogin.resx">
+      <DependentUpon>SubFrmUserLogin.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

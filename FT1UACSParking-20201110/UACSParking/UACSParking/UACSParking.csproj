@@ -1,0 +1,453 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{446F1EF0-3861-4342-AFCD-14755BD00A8F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UACSParking</RootNamespace>
+    <AssemblyName>UACSParking</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <PublishUrl>发布\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>C:\iPlature\SF_HOME\app\form\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Baosight.iSuperframe.Authorization, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\iPlature\SF_HOME\app\form\Baosight.iSuperframe.Authorization.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Baosight.iSuperframe.Authorization.Interface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\iPlature\SF_HOME\app\form\Baosight.iSuperframe.Authorization.Interface.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Baosight.iSuperframe.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\iPlature\SF_HOME\app\form\Baosight.iSuperframe.Common.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Baosight.iSuperframe.Forms, Version=1.0.5634.30831, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\iPlature\SF_HOME\app\form\Baosight.iSuperframe.Forms.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Baosight.iSuperframe.TagService, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\iPlature\SF_HOME\app\form\Baosight.iSuperframe.TagService.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Baosight.iSuperframe.TagService.Controls, Version=1.0.5634.30853, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\iPlature\SF_HOME\app\form\Baosight.iSuperframe.TagService.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Baosight.iSuperframe.TagService.Interface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\iPlature\SF_HOME\app\form\Baosight.iSuperframe.TagService.Interface.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Baosight.iSuperframe.Utility, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\iPlature\SF_HOME\app\form\Baosight.iSuperframe.Utility.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\lib\SF_HOME\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.configuration">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Core">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Data">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Deployment">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="UACSUtility, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\iPlature\SF_HOME\app\form\UACSUtility.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CarNo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CarNo.designer.cs">
+      <DependentUpon>CarNo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCarEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCarEntry.Designer.cs">
+      <DependentUpon>FrmCarEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCarInOutGateHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCarInOutGateHistory.Designer.cs">
+      <DependentUpon>FrmCarInOutGateHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDaoZhaManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDaoZhaManage.Designer.cs">
+      <DependentUpon>FrmDaoZhaManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLaserDataInput.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLaserDataInput.Designer.cs">
+      <DependentUpon>FrmLaserDataInput.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPTInScanBackup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPTInScanBackup.Designer.cs">
+      <DependentUpon>FrmPTInScanBackup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRailwayLogisticsManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRailwayLogisticsManage.Designer.cs">
+      <DependentUpon>FrmRailwayLogisticsManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRailwayParkingOut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRailwayParkingOut.Designer.cs">
+      <DependentUpon>FrmRailwayParkingOut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSelectCoilUpCar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSelectCoilUpCar.Designer.cs">
+      <DependentUpon>FrmSelectCoilUpCar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmStowageDisplay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmStowageDisplay.Designer.cs">
+      <DependentUpon>FrmStowageDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTrainArrive.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTrainArrive.Designer.cs">
+      <DependentUpon>FrmTrainArrive.cs</DependentUpon>
+    </Compile>
+    <Compile Include="kuajiacheForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="kuajiacheForm.Designer.cs">
+      <DependentUpon>kuajiacheForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RFIDClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RFIDClient.Designer.cs">
+      <DependentUpon>RFIDClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PorductMatManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PorductMatManage.designer.cs">
+      <DependentUpon>PorductMatManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resource1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource1.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SelectCoilByL3Form.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectCoilByL3Form.designer.cs">
+      <DependentUpon>SelectCoilByL3Form.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SelectCoilForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectCoilForm.designer.cs">
+      <DependentUpon>SelectCoilForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubFrmCarToTrain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubFrmCarToTrain.Designer.cs">
+      <DependentUpon>SubFrmCarToTrain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubFrmSelectStowageType.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubFrmSelectStowageType.Designer.cs">
+      <DependentUpon>SubFrmSelectStowageType.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubFrmTrainCaseTypeSelect.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubFrmTrainCaseTypeSelect.Designer.cs">
+      <DependentUpon>SubFrmTrainCaseTypeSelect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubFrmTrainSelectCoil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubFrmTrainSelectCoil.Designer.cs">
+      <DependentUpon>SubFrmTrainSelectCoil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubFrmXiaoZhaoCancel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubFrmXiaoZhaoCancel.Designer.cs">
+      <DependentUpon>SubFrmXiaoZhaoCancel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubFrmXiaoZhaoRecover.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubFrmXiaoZhaoRecover.Designer.cs">
+      <DependentUpon>SubFrmXiaoZhaoRecover.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TagCarArrive.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TagCarArrive.Designer.cs">
+      <DependentUpon>TagCarArrive.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TagLaserInEnd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TagLaserInEnd.designer.cs">
+      <DependentUpon>TagLaserInEnd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TagLaserInStart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TagLaserInStart.designer.cs">
+      <DependentUpon>TagLaserInStart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TruckStowageOut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TruckStowageOut.designer.cs">
+      <DependentUpon>TruckStowageOut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TruckStowageInT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TruckStowageInT.designer.cs">
+      <DependentUpon>TruckStowageInT.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CarNo.resx">
+      <DependentUpon>CarNo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCarEntry.resx">
+      <DependentUpon>FrmCarEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCarInOutGateHistory.resx">
+      <DependentUpon>FrmCarInOutGateHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDaoZhaManage.resx">
+      <DependentUpon>FrmDaoZhaManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLaserDataInput.resx">
+      <DependentUpon>FrmLaserDataInput.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPTInScanBackup.resx">
+      <DependentUpon>FrmPTInScanBackup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRailwayLogisticsManage.resx">
+      <DependentUpon>FrmRailwayLogisticsManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRailwayParkingOut.resx">
+      <DependentUpon>FrmRailwayParkingOut.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSelectCoilUpCar.resx">
+      <DependentUpon>FrmSelectCoilUpCar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmStowageDisplay.resx">
+      <DependentUpon>FrmStowageDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTrainArrive.resx">
+      <DependentUpon>FrmTrainArrive.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="kuajiacheForm.resx">
+      <DependentUpon>kuajiacheForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RFIDClient.resx">
+      <DependentUpon>RFIDClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PorductMatManage.resx">
+      <DependentUpon>PorductMatManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Resource1.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectCoilByL3Form.resx">
+      <DependentUpon>SelectCoilByL3Form.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectCoilForm.resx">
+      <DependentUpon>SelectCoilForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubFrmCarToTrain.resx">
+      <DependentUpon>SubFrmCarToTrain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubFrmSelectStowageType.resx">
+      <DependentUpon>SubFrmSelectStowageType.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubFrmTrainCaseTypeSelect.resx">
+      <DependentUpon>SubFrmTrainCaseTypeSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubFrmTrainSelectCoil.resx">
+      <DependentUpon>SubFrmTrainSelectCoil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubFrmXiaoZhaoCancel.resx">
+      <DependentUpon>SubFrmXiaoZhaoCancel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubFrmXiaoZhaoRecover.resx">
+      <DependentUpon>SubFrmXiaoZhaoRecover.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TagCarArrive.resx">
+      <DependentUpon>TagCarArrive.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TagLaserInEnd.resx">
+      <DependentUpon>TagLaserInEnd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TagLaserInStart.resx">
+      <DependentUpon>TagLaserInStart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TruckStowageOut.resx">
+      <DependentUpon>TruckStowageOut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TruckStowageInT.resx">
+      <DependentUpon>TruckStowageInT.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Picture\bg_btn.png" />
+    <Content Include="Picture\imgAdd.png" />
+    <Content Include="Picture\imgSubtract.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ParkClassLibrary\ParkClassLibrary.csproj">
+      <Project>{2ec69a15-9c22-4e66-8cd1-60eb77fbb252}</Project>
+      <Name>ParkClassLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ParkingControlLibrary\ParkingControlLibrary.csproj">
+      <Project>{df19dba8-c688-45c3-a07c-b429cd1d4ea0}</Project>
+      <Name>ParkingControlLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,373 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{FB8AB564-7561-4B73-93F2-8998A33D90DC}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CONTROLS_OF_REPOSITORIES</RootNamespace>
+    <AssemblyName>CONTROLS_OF_REPOSITORIES</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>C:\iPlature\SF_HOME\app\form\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Baosight.iSuperframe.Authorization, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\MODEL_OF_REPOSITORIES\bin\Debug\Baosight.iSuperframe.Authorization.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Baosight.iSuperframe.Authorization.Interface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\MODEL_OF_REPOSITORIES\bin\Debug\Baosight.iSuperframe.Authorization.Interface.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Baosight.iSuperframe.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\MODEL_OF_REPOSITORIES\bin\Debug\Baosight.iSuperframe.Common.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Baosight.iSuperframe.Controls, Version=1.0.5634.30826, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\MODEL_OF_REPOSITORIES\bin\Debug\Baosight.iSuperframe.Controls.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Baosight.iSuperframe.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\MODEL_OF_REPOSITORIES\bin\Debug\Baosight.iSuperframe.Core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Baosight.iSuperframe.Forms, Version=1.0.5634.30831, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\MODEL_OF_REPOSITORIES\bin\Debug\Baosight.iSuperframe.Forms.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Baosight.iSuperframe.Logging, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\MODEL_OF_REPOSITORIES\bin\Debug\Baosight.iSuperframe.Logging.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Baosight.iSuperframe.TagService.Controls, Version=1.0.5634.30853, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\MODEL_OF_REPOSITORIES\bin\Debug\Baosight.iSuperframe.TagService.Controls.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Baosight.iSuperframe.TagService.Interface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\MODEL_OF_REPOSITORIES\bin\Debug\Baosight.iSuperframe.TagService.Interface.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\MODEL_OF_REPOSITORIES\bin\Debug\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="conArea.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="conArea.Designer.cs">
+      <DependentUpon>conArea.cs</DependentUpon>
+    </Compile>
+    <Compile Include="conAreaInStockMessage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="conAreaInStockMessage.Designer.cs">
+      <DependentUpon>conAreaInStockMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="conCarSaddle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="conCarSaddle.designer.cs">
+      <DependentUpon>conCarSaddle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="conClsLib.cs" />
+    <Compile Include="conCraneDisplay.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="conCraneDisplay.Designer.cs">
+      <DependentUpon>conCraneDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="conCraneStatus.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="conCraneStatus.Designer.cs">
+      <DependentUpon>conCraneStatus.cs</DependentUpon>
+    </Compile>
+    <Compile Include="conParkingSpace.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="conParkingSpace.Designer.cs">
+      <DependentUpon>conParkingSpace.cs</DependentUpon>
+    </Compile>
+    <Compile Include="conParkingSpaceInMessage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="conParkingSpaceInMessage.Designer.cs">
+      <DependentUpon>conParkingSpaceInMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="conSaddle.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="conSaddle.Designer.cs">
+      <DependentUpon>conSaddle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="conSaddleInStockMessage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="conSaddleInStockMessage.Designer.cs">
+      <DependentUpon>conSaddleInStockMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="conStockArea.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="conStockArea.Designer.cs">
+      <DependentUpon>conStockArea.cs</DependentUpon>
+    </Compile>
+    <Compile Include="conTruckStowage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="conTruckStowage.designer.cs">
+      <DependentUpon>conTruckStowage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmCraneAlarmLogQuery.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCraneAlarmLogQuery.designer.cs">
+      <DependentUpon>frmCraneAlarmLogQuery.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmModeSwitchover.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmModeSwitchover.Designer.cs">
+      <DependentUpon>FrmModeSwitchover.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmParkingMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmParkingMessage.Designer.cs">
+      <DependentUpon>FrmParkingMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSaddleMetail.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSaddleMetail.Designer.cs">
+      <DependentUpon>FrmSaddleMetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSaddleShow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSaddleShow.Designer.cs">
+      <DependentUpon>FrmSaddleShow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSeekCoil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSeekCoil.Designer.cs">
+      <DependentUpon>FrmSeekCoil.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PopAlarmCurrent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PopAlarmCurrent.designer.cs">
+      <DependentUpon>PopAlarmCurrent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SelectCraneNo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectCraneNo.designer.cs">
+      <DependentUpon>SelectCraneNo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SelectToStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectToStock.Designer.cs">
+      <DependentUpon>SelectToStock.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="conArea.resx">
+      <DependentUpon>conArea.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="conCarSaddle.resx">
+      <DependentUpon>conCarSaddle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="conCraneDisplay.resx">
+      <DependentUpon>conCraneDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="conCraneStatus.resx">
+      <DependentUpon>conCraneStatus.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="conParkingSpace.resx">
+      <DependentUpon>conParkingSpace.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="conSaddle.resx">
+      <DependentUpon>conSaddle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="conStockArea.resx">
+      <DependentUpon>conStockArea.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="conTruckStowage.resx">
+      <DependentUpon>conTruckStowage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCraneAlarmLogQuery.resx">
+      <DependentUpon>frmCraneAlarmLogQuery.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmModeSwitchover.resx">
+      <DependentUpon>FrmModeSwitchover.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmParkingMessage.resx">
+      <DependentUpon>FrmParkingMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSaddleMetail.resx">
+      <DependentUpon>FrmSaddleMetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSaddleShow.resx">
+      <DependentUpon>FrmSaddleShow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSeekCoil.resx">
+      <DependentUpon>FrmSeekCoil.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PopAlarmCurrent.resx">
+      <DependentUpon>PopAlarmCurrent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectCraneNo.resx">
+      <DependentUpon>SelectCraneNo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectToStock.resx">
+      <DependentUpon>SelectToStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MODEL_OF_REPOSITORIES\MODEL_OF_REPOSITORIES.csproj">
+      <Project>{6d92c22e-be58-4169-a772-48c9bdb478dd}</Project>
+      <Name>MODEL_OF_REPOSITORIES</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UACSUtility\UACSUtility.csproj">
+      <Project>{0a64a373-d92b-4a58-957b-074f196f5b5a}</Project>
+      <Name>UACSUtility</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgCoil.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgCoilBy.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgNoCoil.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\imgNoCoilBY.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\bg_btn.png" />
+    <Content Include="Resources\Crab.png" />
+    <Content Include="Resources\greenBall_small.png" />
+    <Content Include="Resources\icon_Query.png" />
+    <Content Include="Resources\imgAllNormalCar.png" />
+    <Content Include="Resources\imgBelowNormalCar.png" />
+    <Content Include="Resources\imgBelowRedNormalCar.png" />
+    <Content Include="Resources\imgCar.png" />
+    <Content Include="Resources\imgCarCoil.png" />
+    <Content Include="Resources\imgCarNoCoil.png" />
+    <Content Include="Resources\imgmatNo.png" />
+    <Content Include="Resources\imgRedAllNormalCar.png" />
+    <Content Include="Resources\imgRedBelowNormalCar.png" />
+    <Content Include="Resources\imgRedTopNormalCar.png" />
+    <Content Include="Resources\imgShowCoil.png" />
+    <Content Include="Resources\imgStockNoInCoil.png" />
+    <Content Include="Resources\imgStockNoInNoCoil.PNG" />
+    <Content Include="Resources\imgStockNoInUndetermined.PNG" />
+    <Content Include="Resources\imgTopNormalCar.png" />
+    <Content Include="Resources\imgTopRedNormalCar.png" />
+    <Content Include="Resources\imgTruckCoil.png" />
+    <Content Include="Resources\redBall_small.png" />
+    <Content Include="Resources\行车-Avoid.png" />
+    <Content Include="Resources\行车-Run.png" />
+    <Content Include="Resources\行车-俯视2.png" />
+    <Content Include="Resources\行车_Avoid.png" />
+    <Content Include="Resources\行车_Stop.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

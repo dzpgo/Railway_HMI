@@ -1,0 +1,387 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F2EF9F57-DF57-4B38-9326-F81C4833ADEB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HMI_OF_REPOSITORIES</RootNamespace>
+    <AssemblyName>HMI_OF_REPOSITORIES</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>C:\iPlature\SF_HOME\app\form\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>
+    </StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Baosight.iSuperframe.Authorization.Interface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\iPlature\SF_HOME\plugins\Authorization_v1.0.0.0\Baosight.iSuperframe.Authorization.Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="Baosight.iSuperframe.Common">
+      <HintPath>..\MODEL_OF_REPOSITORIES\bin\Debug\Baosight.iSuperframe.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Baosight.iSuperframe.Controls">
+      <HintPath>..\..\lib\SF_HOME\Baosight.iSuperframe.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Baosight.iSuperframe.Core">
+      <HintPath>..\MODEL_OF_REPOSITORIES\bin\Debug\Baosight.iSuperframe.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Baosight.iSuperframe.Forms">
+      <HintPath>..\MODEL_OF_REPOSITORIES\bin\Debug\Baosight.iSuperframe.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="Baosight.iSuperframe.Logging">
+      <HintPath>..\..\..\..\..\..\iPlature\SF_HOME\Baosight.iSuperframe.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Baosight.iSuperframe.TagService.Controls">
+      <HintPath>..\MODEL_OF_REPOSITORIES\bin\Debug\Baosight.iSuperframe.TagService.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Baosight.iSuperframe.TagService.Interface">
+      <HintPath>..\MODEL_OF_REPOSITORIES\bin\Debug\Baosight.iSuperframe.TagService.Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="BSE.Windows.Forms">
+      <HintPath>..\..\..\..\..\..\iPlature\SF_HOME\BSE.Windows.Forms.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\..\lib\log4net-1.2.15\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
+      <SpecificVersion>False</SpecificVersion>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+      <HintPath>..\MODEL_OF_REPOSITORIES\bin\Debug\Microsoft.Office.Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UACSUtility, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\iPlature\SF_HOME\app\form\UACSUtility.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CraneAdjustHeight.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CraneAdjustHeight.Designer.cs">
+      <DependentUpon>CraneAdjustHeight.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCarHearInf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCarHearInf.Designer.cs">
+      <DependentUpon>FrmCarHearInf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCraneOrderHisyManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCraneOrderHisyManage.designer.cs">
+      <DependentUpon>FrmCraneOrderHisyManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCranePlanManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCranePlanManage.designer.cs">
+      <DependentUpon>FrmCranePlanManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCranePlanOper.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCranePlanOper.designer.cs">
+      <DependentUpon>FrmCranePlanOper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmGetCoilMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGetCoilMessage.designer.cs">
+      <DependentUpon>FrmGetCoilMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPlanInMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPlanInMessage.Designer.cs">
+      <DependentUpon>FrmPlanInMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSensorMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSensorMessage.Designer.cs">
+      <DependentUpon>FrmSensorMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmStockStrategyManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmStockStrategyManage.Designer.cs">
+      <DependentUpon>FrmStockStrategyManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmStockStrategyManageOut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmStockStrategyManageOut.Designer.cs">
+      <DependentUpon>FrmStockStrategyManageOut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmStockStrategyManageYard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmStockStrategyManageYard.Designer.cs">
+      <DependentUpon>FrmStockStrategyManageYard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmTrainCargo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmTrainCargo.Designer.cs">
+      <DependentUpon>FrmTrainCargo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmL3MsgManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmL3MsgManage.designer.cs">
+      <DependentUpon>FrmL3MsgManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmLogForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmLogForm.designer.cs">
+      <DependentUpon>FrmLogForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmStatForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmStatForm.designer.cs">
+      <DependentUpon>FrmStatForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="L3PlanManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="L3PlanManage.designer.cs">
+      <DependentUpon>L3PlanManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="StowageMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StowageMessage.designer.cs">
+      <DependentUpon>StowageMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubFormCarPos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubFormCarPos.designer.cs">
+      <DependentUpon>SubFormCarPos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubFrmDaoZhaForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubFrmDaoZhaForm.designer.cs">
+      <DependentUpon>SubFrmDaoZhaForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPlanOutMessage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPlanOutMessage.Designer.cs">
+      <DependentUpon>FrmPlanOutMessage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRailwayABayMonitor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRailwayABayMonitor.Designer.cs">
+      <DependentUpon>FrmRailwayABayMonitor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmParkSafeGateView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmParkSafeGateView.Designer.cs">
+      <DependentUpon>FrmParkSafeGateView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SubFrmLetOutWater.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubFrmLetOutWater.Designer.cs">
+      <DependentUpon>SubFrmLetOutWater.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SubFrmUserLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SubFrmUserLogin.Designer.cs">
+      <DependentUpon>SubFrmUserLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TruckFrameManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TruckFrameManage.designer.cs">
+      <DependentUpon>TruckFrameManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="WarehouseAccessForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WarehouseAccessForm.designer.cs">
+      <DependentUpon>WarehouseAccessForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="XiaoZhangHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="XiaoZhangHistory.Designer.cs">
+      <DependentUpon>XiaoZhangHistory.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CraneAdjustHeight.resx">
+      <DependentUpon>CraneAdjustHeight.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCarHearInf.resx">
+      <DependentUpon>FrmCarHearInf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCraneOrderHisyManage.resx">
+      <DependentUpon>FrmCraneOrderHisyManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCranePlanManage.resx">
+      <DependentUpon>FrmCranePlanManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCranePlanOper.resx">
+      <DependentUpon>FrmCranePlanOper.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGetCoilMessage.resx">
+      <DependentUpon>FrmGetCoilMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPlanInMessage.resx">
+      <DependentUpon>FrmPlanInMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSensorMessage.resx">
+      <DependentUpon>FrmSensorMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmStockStrategyManage.resx">
+      <DependentUpon>FrmStockStrategyManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmStockStrategyManageOut.resx">
+      <DependentUpon>FrmStockStrategyManageOut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmStockStrategyManageYard.resx">
+      <DependentUpon>FrmStockStrategyManageYard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmTrainCargo.resx">
+      <DependentUpon>FrmTrainCargo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmL3MsgManage.resx">
+      <DependentUpon>FrmL3MsgManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmLogForm.resx">
+      <DependentUpon>FrmLogForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmStatForm.resx">
+      <DependentUpon>FrmStatForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="L3PlanManage.resx">
+      <DependentUpon>L3PlanManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StowageMessage.resx">
+      <DependentUpon>StowageMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubFormCarPos.resx">
+      <DependentUpon>SubFormCarPos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubFrmDaoZhaForm.resx">
+      <DependentUpon>SubFrmDaoZhaForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPlanOutMessage.resx">
+      <DependentUpon>FrmPlanOutMessage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRailwayABayMonitor.resx">
+      <DependentUpon>FrmRailwayABayMonitor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmParkSafeGateView.resx">
+      <DependentUpon>FrmParkSafeGateView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="SubFrmLetOutWater.resx">
+      <DependentUpon>SubFrmLetOutWater.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SubFrmUserLogin.resx">
+      <DependentUpon>SubFrmUserLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TruckFrameManage.resx">
+      <DependentUpon>TruckFrameManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WarehouseAccessForm.resx">
+      <DependentUpon>WarehouseAccessForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="XiaoZhangHistory.resx">
+      <DependentUpon>XiaoZhangHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CONTROLS_OF_REPOSITORIES\CONTROLS_OF_REPOSITORIES.csproj">
+      <Project>{fb8ab564-7561-4b73-93f2-8998a33d90dc}</Project>
+      <Name>CONTROLS_OF_REPOSITORIES</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MODEL_OF_REPOSITORIES\MODEL_OF_REPOSITORIES.csproj">
+      <Project>{6d92c22e-be58-4169-a772-48c9bdb478dd}</Project>
+      <Name>MODEL_OF_REPOSITORIES</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{446F1EF0-3861-4342-AFCD-14755BD00A8F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ParkingControlLibrary</RootNamespace>
+    <AssemblyName>UACSParking</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>C:\iPlature\SF_HOME\app\form\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Baosight.iSuperframe.Authorization">
+      <HintPath>..\..\..\铁路库PDA\UACS_HMI\iPlatueHMILib\Baosight.iSuperframe.Authorization.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Baosight.iSuperframe.Authorization.Interface">
+      <HintPath>C:\iPlature\SF_HOME\app\form\Baosight.iSuperframe.Authorization.Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="Baosight.iSuperframe.Common">
+      <HintPath>D:\form\Baosight.iSuperframe.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Baosight.iSuperframe.Forms">
+      <HintPath>D:\form\Baosight.iSuperframe.Forms.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Baosight.iSuperframe.TagService.Controls">
+      <HintPath>D:\form\Baosight.iSuperframe.TagService.Controls.dll</HintPath>
+    </Reference>
+    <Reference Include="Baosight.iSuperframe.TagService.Interface">
+      <HintPath>D:\form\Baosight.iSuperframe.TagService.Interface.dll</HintPath>
+    </Reference>
+    <Reference Include="Baosight.iSuperframe.Utility">
+      <HintPath>D:\form\Baosight.iSuperframe.Utility.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CarNo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CarNo.designer.cs">
+      <DependentUpon>CarNo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCarEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCarEntry.Designer.cs">
+      <DependentUpon>FrmCarEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="kuajiacheForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="kuajiacheForm.Designer.cs">
+      <DependentUpon>kuajiacheForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PorductMatManage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PorductMatManage.designer.cs">
+      <DependentUpon>PorductMatManage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resource1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource1.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SelectCoilForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectCoilForm.designer.cs">
+      <DependentUpon>SelectCoilForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TagCarArrive.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TagCarArrive.Designer.cs">
+      <DependentUpon>TagCarArrive.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TagLaserInEnd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TagLaserInEnd.designer.cs">
+      <DependentUpon>TagLaserInEnd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TagLaserInStart.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TagLaserInStart.designer.cs">
+      <DependentUpon>TagLaserInStart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TruckStowageOut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TruckStowageOut.designer.cs">
+      <DependentUpon>TruckStowageOut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TruckStowageInT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TruckStowageInT.designer.cs">
+      <DependentUpon>TruckStowageInT.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="CarNo.resx">
+      <DependentUpon>CarNo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCarEntry.resx">
+      <DependentUpon>FrmCarEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="kuajiacheForm.resx">
+      <DependentUpon>kuajiacheForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PorductMatManage.resx">
+      <DependentUpon>PorductMatManage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Resource1.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource1.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectCoilForm.resx">
+      <DependentUpon>SelectCoilForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TagCarArrive.resx">
+      <DependentUpon>TagCarArrive.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TagLaserInEnd.resx">
+      <DependentUpon>TagLaserInEnd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TagLaserInStart.resx">
+      <DependentUpon>TagLaserInStart.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TruckStowageOut.resx">
+      <DependentUpon>TruckStowageOut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TruckStowageInT.resx">
+      <DependentUpon>TruckStowageInT.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Picture\bg_btn.png" />
+    <Content Include="Picture\imgAdd.png" />
+    <Content Include="Picture\imgSubtract.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ParkClassLibrary\ParkClassLibrary.csproj">
+      <Project>{2ec69a15-9c22-4e66-8cd1-60eb77fbb252}</Project>
+      <Name>ParkClassLibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ParkingControlLibrary\ParkingControlLibrary.csproj">
+      <Project>{df19dba8-c688-45c3-a07c-b429cd1d4ea0}</Project>
+      <Name>ParkingControlLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

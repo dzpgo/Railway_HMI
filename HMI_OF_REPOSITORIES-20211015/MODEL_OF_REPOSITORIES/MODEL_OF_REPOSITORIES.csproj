@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6D92C22E-BE58-4169-A772-48C9BDB478DD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MODEL_OF_REPOSITORIES</RootNamespace>
+    <AssemblyName>MODEL_OF_REPOSITORIES</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SccProjectName>
+    </SccProjectName>
+    <SccLocalPath>
+    </SccLocalPath>
+    <SccAuxPath>
+    </SccAuxPath>
+    <SccProvider>
+    </SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>C:\iPlature\SF_HOME\app\form\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Baosight.iSuperframe.Authorization, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Baosight.iSuperframe.Authorization.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Baosight.iSuperframe.Authorization.Interface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Baosight.iSuperframe.Authorization.Interface.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Baosight.iSuperframe.Common, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Baosight.iSuperframe.Common.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Baosight.iSuperframe.Core, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Baosight.iSuperframe.Core.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Baosight.iSuperframe.Forms, Version=1.0.5634.30831, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Baosight.iSuperframe.Forms.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Baosight.iSuperframe.TagService.Controls, Version=1.0.5634.30853, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Baosight.iSuperframe.TagService.Controls.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Baosight.iSuperframe.TagService.Interface, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Baosight.iSuperframe.TagService.Interface.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="CltsSlice4Net, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\CltsSlice4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Ice, Version=3.4.1.0, Culture=neutral, PublicKeyToken=cdd571ade22f2f16, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>bin\Debug\Ice.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UACSUtility">
+      <HintPath>..\UACSUtility\obj\Debug\UACSUtility.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AreaBase.cs" />
+    <Compile Include="AreaInBay.cs" />
+    <Compile Include="AuthorityManagement.cs" />
+    <Compile Include="CarMessageBase.cs" />
+    <Compile Include="CarMessageInBay.cs" />
+    <Compile Include="CoilMessage.cs" />
+    <Compile Include="CraneStatusInBay.cs" />
+    <Compile Include="CraneStatusBase.cs" />
+    <Compile Include="DB2Connect.cs" />
+    <Compile Include="InNumberClass.cs" />
+    <Compile Include="LimitUltrahighTagValue.cs" />
+    <Compile Include="LogManager.cs" />
+    <Compile Include="MsgData.cs" />
+    <Compile Include="MsgDataGroup.cs" />
+    <Compile Include="MsgField.cs" />
+    <Compile Include="MsgParser.cs" />
+    <Compile Include="MsgRecuField.cs" />
+    <Compile Include="MsgStandField.cs" />
+    <Compile Include="MsgXmlData.cs" />
+    <Compile Include="NumberBese.cs" />
+    <Compile Include="SaddleBase.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SaddleInBay.cs" />
+    <Compile Include="SaddleStrategyData.cs" />
+    <Compile Include="SaddleStrategyType.cs" />
+    <Compile Include="TagNameClass.cs" />
+    <Compile Include="TruckStowage.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

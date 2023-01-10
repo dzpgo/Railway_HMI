@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "1550PDA", "1550PDA\1550PDA.csproj", "{26B5165F-2B15-46B1-9F05-157DB2DD53E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CltsSlice4NetCfv3.5", "..\..\Server\CltsSlice4NetCfv3.5\CltsSlice4NetCfv3.5.csproj", "{D6922070-3D3F-4EA7-AB87-5FA5949B6F48}"
+EndProject
+Global
+	GlobalSection(PowerDesigner) = preSolution
+		HasSWS = 1
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{26B5165F-2B15-46B1-9F05-157DB2DD53E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{26B5165F-2B15-46B1-9F05-157DB2DD53E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{26B5165F-2B15-46B1-9F05-157DB2DD53E5}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{26B5165F-2B15-46B1-9F05-157DB2DD53E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{26B5165F-2B15-46B1-9F05-157DB2DD53E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{26B5165F-2B15-46B1-9F05-157DB2DD53E5}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{D6922070-3D3F-4EA7-AB87-5FA5949B6F48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6922070-3D3F-4EA7-AB87-5FA5949B6F48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6922070-3D3F-4EA7-AB87-5FA5949B6F48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6922070-3D3F-4EA7-AB87-5FA5949B6F48}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
