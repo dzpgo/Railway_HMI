@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using Baosight.iSuperframe.TagService;
+using FORMS_OF_REPOSITORIES;
 
 namespace HMI_OF_REPOSITORIES
 {
@@ -14,9 +15,27 @@ namespace HMI_OF_REPOSITORIES
     {
         Baosight.iSuperframe.TagService.DataCollection<object> TagValues = new DataCollection<object>();
         private Baosight.iSuperframe.TagService.Controls.TagDataProvider tagDP = new Baosight.iSuperframe.TagService.Controls.TagDataProvider();
+        private FrmRailwayABayMonitor FRA;
+        private FrmRailwayCBayMonitor FRC;
         public Recondition()
         {
             InitializeComponent();
+        }
+        /// <summary>
+        /// 添加一个构造函数
+        /// </summary>
+        /// <param name="form"></param>
+        public Recondition(FrmRailwayABayMonitor form) : this()
+        {
+            FRA = form;
+        }
+        /// <summary>
+        /// 添加一个构造函数
+        /// </summary>
+        /// <param name="form"></param>
+        public Recondition(FrmRailwayCBayMonitor form) : this()
+        {
+            FRC = form;
         }
         private string bayNO = "";
         public string BayNO
@@ -89,6 +108,17 @@ namespace HMI_OF_REPOSITORIES
                 if (dr == DialogResult.OK)
                 {
                     tagDP.SetData(recondition, txt_Act_X.Text);
+
+                    #region 检修时更改行车背景颜色
+                    if (bayNO.Equals("A"))
+                    {
+                        FRA.UpdataCrane(cmCraneNO.SelectedValue.ToString().Trim());
+                    }
+                    else if (bayNO.Equals("C"))
+                    {
+                        FRC.UpdataCrane(cmCraneNO.SelectedValue.ToString().Trim());
+                    } 
+                    #endregion
                 }
                 else
                 {
@@ -112,6 +142,17 @@ namespace HMI_OF_REPOSITORIES
                 if (dr == DialogResult.OK)
                 {
                     tagDP.SetData(recondition, "0");
+
+                    #region 检修完成时更改行车背景颜色
+                    if (bayNO.Equals("A"))
+                    {
+                        FRA.OutCrane(cmCraneNO.SelectedValue.ToString().Trim());
+                    }
+                    else if (bayNO.Equals("C"))
+                    {
+                        FRC.OutCrane(cmCraneNO.SelectedValue.ToString().Trim());
+                    } 
+                    #endregion
                 }
                 else
                 {

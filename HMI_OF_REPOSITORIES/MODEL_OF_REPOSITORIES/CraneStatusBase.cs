@@ -228,6 +228,10 @@ namespace MODEL_OF_REPOSITORIES
             {
                 return CRANE_MODE_AWAIT_DESC;
             }
+            else if (controlMode == CRANE_MODE_Recondition)
+            {
+                return CRANE_MODE_Recondition_DESC;
+            }
             else
             {
                 return CRANE_MODE_UNKNOWN;
@@ -247,6 +251,10 @@ namespace MODEL_OF_REPOSITORIES
         public const long CRANE_MODE_AUTO = 4;
         //等待 = 5
         public const long CRANE_MODE_AWAIT = 5;
+        /// <summary>
+        /// 检修 = 6
+        /// </summary>
+        public const long CRANE_MODE_Recondition = 6;
 
 
 
@@ -258,6 +266,10 @@ namespace MODEL_OF_REPOSITORIES
         public const string CRANE_MODE_AUTO_DESC = "自动";
         //等待 = 5
         public const string CRANE_MODE_AWAIT_DESC = "等待";
+        /// <summary>
+        /// 检修 = 6
+        /// </summary>
+        public const string CRANE_MODE_Recondition_DESC = "检修";
 
         public const string CRANE_MODE_UNKNOWN = "未知";
 

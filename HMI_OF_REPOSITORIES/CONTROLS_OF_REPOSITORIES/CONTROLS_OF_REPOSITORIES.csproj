@@ -26,7 +26,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\..\..\..\A_WTBin\</OutputPath>
+    <OutputPath>C:\iPlature\SF_HOME\app\form\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -89,10 +89,6 @@
       <HintPath>..\MODEL_OF_REPOSITORIES\bin\Debug\Baosight.iSuperframe.TagService.Interface.dll</HintPath>
       <Private>False</Private>
     </Reference>
-    <Reference Include="CONTROLS_OF_PREMIERE, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\iPlature\SF_HOME\app\form\CONTROLS_OF_PREMIERE.dll</HintPath>
-    </Reference>
     <Reference Include="log4net, Version=1.2.10.0, Culture=neutral, PublicKeyToken=1b44e1d426115821, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\MODEL_OF_REPOSITORIES\bin\Debug\log4net.dll</HintPath>
@@ -107,10 +103,6 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="UACSUtility, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\iPlature\SF_HOME\app\form\UACSUtility.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="conArea.cs">
@@ -320,9 +312,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\HMI_OF_PREMIERE\CONTROLS_OF_PREMIERE\CONTROLS_OF_PREMIERE.csproj">
+      <Project>{00ddf2ba-7a27-4af1-af78-867040e30954}</Project>
+      <Name>CONTROLS_OF_PREMIERE</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MODEL_OF_REPOSITORIES\MODEL_OF_REPOSITORIES.csproj">
       <Project>{6d92c22e-be58-4169-a772-48c9bdb478dd}</Project>
       <Name>MODEL_OF_REPOSITORIES</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UACSUtility\UACSUtility.csproj">
+      <Project>{0a64a373-d92b-4a58-957b-074f196f5b5a}</Project>
+      <Name>UACSUtility</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

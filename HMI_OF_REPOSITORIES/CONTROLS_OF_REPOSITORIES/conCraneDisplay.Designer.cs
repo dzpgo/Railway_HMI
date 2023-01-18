@@ -42,8 +42,9 @@
             this.panelCrane.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelCrane.Font = new System.Drawing.Font("微软雅黑", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.panelCrane.Location = new System.Drawing.Point(0, 0);
+            this.panelCrane.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelCrane.Name = "panelCrane";
-            this.panelCrane.Size = new System.Drawing.Size(47, 408);
+            this.panelCrane.Size = new System.Drawing.Size(70, 612);
             this.panelCrane.TabIndex = 3;
             // 
             // panelCrab
@@ -52,19 +53,21 @@
             this.panelCrab.BackColor = System.Drawing.Color.White;
             this.panelCrab.BackgroundImage = global::CONTROLS_OF_REPOSITORIES.Resources.imgCarNoCoil;
             this.panelCrab.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelCrab.Location = new System.Drawing.Point(0, 194);
+            this.panelCrab.Location = new System.Drawing.Point(0, 291);
+            this.panelCrab.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelCrab.Name = "panelCrab";
-            this.panelCrab.Size = new System.Drawing.Size(47, 27);
+            this.panelCrab.Size = new System.Drawing.Size(70, 40);
             this.panelCrab.TabIndex = 3;
             // 
             // conCraneDisplay
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
             this.Controls.Add(this.panelCrane);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "conCraneDisplay";
-            this.Size = new System.Drawing.Size(47, 408);
+            this.Size = new System.Drawing.Size(70, 612);
             this.panelCrane.ResumeLayout(false);
             this.ResumeLayout(false);
 

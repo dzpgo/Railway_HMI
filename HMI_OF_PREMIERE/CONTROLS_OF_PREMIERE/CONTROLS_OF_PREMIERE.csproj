@@ -53,10 +53,10 @@
       <HintPath>C:\iPlature\SF_HOME\app\form\Baosight.iSuperframe.Forms.dll</HintPath>
     </Reference>
     <Reference Include="Baosight.iSuperframe.MsgService">
-      <HintPath>C:\iPlature\SF_HOME\app\form\Baosight.iSuperframe.MsgService.dll</HintPath>
+      <HintPath>..\..\lib\SF_HOME\plugins\MsgService_v1.0.0.0\Baosight.iSuperframe.MsgService.dll</HintPath>
     </Reference>
     <Reference Include="Baosight.iSuperframe.MsgService.Interface">
-      <HintPath>C:\iPlature\SF_HOME\app\form\Baosight.iSuperframe.MsgService.Interface.dll</HintPath>
+      <HintPath>..\..\lib\SF_HOME\plugins\MsgService_v1.0.0.0\Baosight.iSuperframe.MsgService.Interface.dll</HintPath>
     </Reference>
     <Reference Include="Baosight.iSuperframe.TagService.Controls">
       <HintPath>C:\iPlature\SF_HOME\app\form\Baosight.iSuperframe.TagService.Controls.dll</HintPath>
@@ -80,10 +80,6 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="UACSUtility, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\iPlature\SF_HOME\app\form\UACSUtility.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ConCraneStatusPanel.cs">
@@ -156,6 +152,10 @@
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\HMI_OF_REPOSITORIES\UACSUtility\UACSUtility.csproj">
+      <Project>{0a64a373-d92b-4a58-957b-074f196f5b5a}</Project>
+      <Name>UACSUtility</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MODULES_OF_PREMIERE\MODULES_OF_PREMIERE.csproj">
       <Project>{C23C9CFE-73C0-47CF-B194-33A2A69E3613}</Project>
       <Name>MODULES_OF_PREMIERE</Name>

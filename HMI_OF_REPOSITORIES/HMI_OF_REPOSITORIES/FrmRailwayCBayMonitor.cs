@@ -461,10 +461,13 @@ namespace FORMS_OF_REPOSITORIES
         {
             //timer1_Tick(null, null);
             //timer2_Tick(null, null);
-            Recondition frm = new Recondition();
+            //Recondition frm = new Recondition();
+            //frm.BayNO = "C";
+            //frm.ShowDialog();
+            //UACSUtility.HMILogger.WriteLog(btnUpSaddle.Text, "按钮刷新", UACSUtility.LogLevel.Info ,this.Text);
+            Recondition frm = new Recondition(this);
             frm.BayNO = "C";
             frm.ShowDialog();
-            //UACSUtility.HMILogger.WriteLog(btnUpSaddle.Text, "按钮刷新", UACSUtility.LogLevel.Info ,this.Text);
         }
         private void SetGatStatus(string gateName, bool status)
         {
@@ -496,8 +499,39 @@ namespace FORMS_OF_REPOSITORIES
         #endregion
 
 
+        #region 检修时更改行车背景颜色
+        /// <summary>
+        /// 更新行车背景颜色
+        /// </summary>
+        /// <param name="CraneNO">行车号</param>
+        public void UpdataCrane(string CraneNO)
+        {
+            if (CraneNO.Equals("7"))
+            {
+                this.conRailwayCrane_7.BackColor = System.Drawing.Color.Red;
+            }
+            else if (CraneNO.Equals("8"))
+            {
+                this.conRailwayCrane_8.BackColor = System.Drawing.Color.Red;
+            }
+        }
+        /// <summary>
+        /// 取消行车背景颜色
+        /// </summary>
+        /// <returns></returns>
+        public void OutCrane(string CraneNO)
+        {
+            if (CraneNO.Equals("7"))
+            {
+                this.conRailwayCrane_7.BackColor = System.Drawing.SystemColors.Control;
+            }
+            else if (CraneNO.Equals("8"))
+            {
+                this.conRailwayCrane_8.BackColor = System.Drawing.SystemColors.Control;
+            }
+        } 
+        #endregion
 
 
-    
     }
 }

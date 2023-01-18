@@ -92,10 +92,6 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="UACSUtility, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\iPlature\SF_HOME\app\form\UACSUtility.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CraneAdjustHeight.cs">
@@ -394,6 +390,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\HMI_OF_PREMIERE\CONTROLS_OF_PREMIERE\CONTROLS_OF_PREMIERE.csproj">
+      <Project>{00ddf2ba-7a27-4af1-af78-867040e30954}</Project>
+      <Name>CONTROLS_OF_PREMIERE</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CONTROLS_OF_REPOSITORIES\CONTROLS_OF_REPOSITORIES.csproj">
       <Project>{fb8ab564-7561-4b73-93f2-8998a33d90dc}</Project>
       <Name>CONTROLS_OF_REPOSITORIES</Name>
@@ -401,6 +401,10 @@
     <ProjectReference Include="..\MODEL_OF_REPOSITORIES\MODEL_OF_REPOSITORIES.csproj">
       <Project>{6d92c22e-be58-4169-a772-48c9bdb478dd}</Project>
       <Name>MODEL_OF_REPOSITORIES</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UACSUtility\UACSUtility.csproj">
+      <Project>{0a64a373-d92b-4a58-957b-074f196f5b5a}</Project>
+      <Name>UACSUtility</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
