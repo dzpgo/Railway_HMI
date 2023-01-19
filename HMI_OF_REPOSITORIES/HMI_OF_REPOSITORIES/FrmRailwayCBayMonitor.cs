@@ -279,6 +279,17 @@ namespace FORMS_OF_REPOSITORIES
             try
             {
 
+                #region 检修时行车背景颜色
+                if (Crane_7)
+                {
+                    conRailwayCrane_7.BackColor = System.Drawing.Color.Red;
+                }
+                if (Crane_8)
+                {
+                    conRailwayCrane_8.BackColor = System.Drawing.Color.Red;
+                } 
+                #endregion
+
                 craneStatusInBay.getAllPLCStatusInBay(CraneNoList);
 
                 //--------------------------行车指令控件刷新------------------------------------------
@@ -500,6 +511,16 @@ namespace FORMS_OF_REPOSITORIES
 
 
         #region 检修时更改行车背景颜色
+
+        /// <summary>
+        /// 7#行车是否正在检修
+        /// </summary>
+        private bool Crane_7 = false;
+        /// <summary>
+        /// 8#行车是否正在检修
+        /// </summary>
+        private bool Crane_8 = false;
+
         /// <summary>
         /// 更新行车背景颜色
         /// </summary>
@@ -509,10 +530,12 @@ namespace FORMS_OF_REPOSITORIES
             if (CraneNO.Equals("7"))
             {
                 this.conRailwayCrane_7.BackColor = System.Drawing.Color.Red;
+                Crane_7 = true;
             }
             else if (CraneNO.Equals("8"))
             {
                 this.conRailwayCrane_8.BackColor = System.Drawing.Color.Red;
+                Crane_8 = true;
             }
         }
         /// <summary>
@@ -524,10 +547,12 @@ namespace FORMS_OF_REPOSITORIES
             if (CraneNO.Equals("7"))
             {
                 this.conRailwayCrane_7.BackColor = System.Drawing.SystemColors.Control;
+                Crane_7 = false;
             }
             else if (CraneNO.Equals("8"))
             {
                 this.conRailwayCrane_8.BackColor = System.Drawing.SystemColors.Control;
+                Crane_8 = false;
             }
         } 
         #endregion

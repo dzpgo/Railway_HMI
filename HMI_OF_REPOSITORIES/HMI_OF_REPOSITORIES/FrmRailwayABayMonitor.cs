@@ -282,6 +282,21 @@ namespace FORMS_OF_REPOSITORIES
             try
             {
 
+                #region 检修时行车背景颜色
+                if (Crane_1)
+                {
+                    conRailwayCrane_1.BackColor = System.Drawing.Color.Red;
+                }
+                if (Crane_2)
+                {
+                    conRailwayCrane_2.BackColor = System.Drawing.Color.Red;
+                }
+                if (Crane_3)
+                {
+                    conRailwayCrane_3.BackColor = System.Drawing.Color.Red;
+                } 
+                #endregion
+
                 craneStatusInBay.getAllPLCStatusInBay(CraneNoList);
 
                 //--------------------------行车指令控件刷新------------------------------------------
@@ -531,6 +546,19 @@ namespace FORMS_OF_REPOSITORIES
 
         #region 检修时更改行车背景颜色
         /// <summary>
+        /// 1#行车是否正在检修
+        /// </summary>
+        private bool Crane_1 = false;
+        /// <summary>
+        /// 2#行车是否正在检修
+        /// </summary>
+        private bool Crane_2 = false;
+        /// <summary>
+        /// 3#行车是否正在检修
+        /// </summary>
+        private bool Crane_3 = false;
+
+        /// <summary>
         /// 更新行车背景颜色
         /// </summary>
         /// <param name="CraneNO">行车号</param>
@@ -539,14 +567,17 @@ namespace FORMS_OF_REPOSITORIES
             if (CraneNO.Equals("1"))
             {
                 this.conRailwayCrane_1.BackColor = System.Drawing.Color.Red;
+                Crane_1 = true;
             }
             else if (CraneNO.Equals("2"))
             {
                 this.conRailwayCrane_2.BackColor = System.Drawing.Color.Red;
+                Crane_2 = true;
             }
             else if (CraneNO.Equals("3"))
             {
                 this.conRailwayCrane_3.BackColor = System.Drawing.Color.Red;
+                Crane_3 = true;
             }
         }
         /// <summary>
@@ -558,14 +589,17 @@ namespace FORMS_OF_REPOSITORIES
             if (CraneNO.Equals("1"))
             {
                 this.conRailwayCrane_1.BackColor = System.Drawing.SystemColors.Control;
+                Crane_1 = false;
             }
             else if (CraneNO.Equals("2"))
             {
                 this.conRailwayCrane_2.BackColor = System.Drawing.SystemColors.Control;
+                Crane_2 = false;
             }
             else if (CraneNO.Equals("3"))
             {
                 this.conRailwayCrane_3.BackColor = System.Drawing.SystemColors.Control;
+                Crane_3 = false;
             }
         } 
         #endregion
