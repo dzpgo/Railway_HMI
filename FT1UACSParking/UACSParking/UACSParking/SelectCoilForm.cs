@@ -1,15 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
-using Baosight.iSuperframe.Forms;
+using Baosight.iSuperframe.Authorization.Interface;
+using Baosight.iSuperframe.Common;
 using Baosight.iSuperframe.TagService;
-
-using UACSParking;
 using ParkClassLibrary;
 
 namespace UACSParking
@@ -102,7 +99,11 @@ namespace UACSParking
             //加载扫描数据
             RefreshHMILaserOutData();
             //加载材料信息
-            BindMatStock(parkNO);           
+            BindMatStock(parkNO);
+            //加载品名
+            BindGoods();
+            //加载库位号
+            BindBoxStockNO();
         }
 
         private void btnQuery_Click(object sender, EventArgs e)
@@ -452,97 +453,261 @@ namespace UACSParking
         /// <summary>
         /// 绑定材料位置信息
         /// </summary>
+        /// <param name="packing">停车位</param>
+        /// <param name="planNo">计划号</param>
+        /// <param name="goodsName">品名</param>
+        /// <param name="shipName">船名</param>
+        /// <param name="havenID">港口</param>
+        /// <param name="weightMax">最大净重</param>
+        /// <param name="weightMin">最小净重</param>
+        /// <param name="outdiaMax">最大外径</param>
+        /// <param name="outdiaMin">最小外径</param>
+        /// <param name="widthMax">最大宽度</param>
+        /// <param name="widthMin">最小宽度</param>
         private void BindMatStock(string packing, string planNo = "")
         {
-            if (!packing.Contains('F') || packing.Trim() == "")
+            try
             {
-                return;
-            }
-            dt.Clear();
-
-            long XMax = 400000;
-            long XMin = 400000;
-            if (packing == "Z53A1" || packing == "Z53A2")
-            {
-                //max  392292 392271
-                //min 250499
-                XMax = 439400;
-                XMin = 250300;
-            }
-            if (packing == "Z52A1" || packing == "Z52A2")
-            {
-                //mini 450295 450292 450280
-                //min  308856  250499
-                XMax = 450300;
-                XMin = 250300;
-            }
-            if (packing == "Z51A1" || packing == "Z51A2")
-            {
-                //max   450671 450681 450671
-                //min 308785
-                XMax = 450800;
-                XMin = 308500;
-            }
-            string sqlText_All = @"  SELECT 0 AS CHECK_COLUMN, C.MAT_NO AS COIL_NO, A.LOT_NO as LOT_NO,  C.BAY_NO, C.STOCK_NO, B.WEIGHT, B.WIDTH, B.INDIA, B.OUTDIA,";
-            sqlText_All += "    D.X_CENTER, D.Y_CENTER, C.Z_CENTER ,";
-            sqlText_All += " B.ACT_WEIGHT, B.ACT_WIDTH FROM UACS_YARDMAP_STOCK_DEFINE C ";
-            sqlText_All += " LEFT JOIN UACS_YARDMAP_COIL B ON C.MAT_NO = B.COIL_NO ";
-            sqlText_All += " LEFT JOIN  UACS_PLAN_L3PICK A ON C.MAT_NO = A.COIL_NO ";
-            sqlText_All += " LEFT JOIN  UACS_YARDMAP_SADDLE_STOCK E ON C.STOCK_NO = E.STOCK_NO ";
-            sqlText_All += " LEFT JOIN  UACS_YARDMAP_SADDLE_DEFINE D  ON E.SADDLE_NO = D.SADDLE_NO ";
-            //sqlText_All += " WHERE  C.BAY_NO  like '" + packing.Substring(0, 3) + "%' ";
-            //对铁路库
-            if (parkNO.Contains("FT1"))
-            {
-                sqlText_All += " WHERE  C.BAY_NO = 'A-1' ";
-            }
-            else if (parkNO.Contains("FT3"))
-            {
-                sqlText_All += " WHERE  C.BAY_NO = 'C-1' ";
-            }
-
-            sqlText_All += " AND C.STOCK_STATUS = 2 AND C.LOCK_FLAG = 0 AND C.MAT_NO IS NOT NULL  ";
-            if (packing.Contains("Z5"))
-            {
-
-                sqlText_All += " AND D.X_CENTER >" + XMin.ToString();
-                sqlText_All += " AND D.X_CENTER <" + XMax.ToString();
-            }
-
-
-            if (planNo=="")
-            {
-               
-            }
-            else if (planNo.Trim().Length > 3)
-            {
-                sqlText_All += " AND A.LOT_NO  like '" + "%" + planNo + "%' ";
-            }
-            sqlText_All += " order by C.STOCK_NO DESC ";
-            using (IDataReader rdr = DBHelper.ExecuteReader(sqlText_All))
-            {
-                while (rdr.Read())
+                if (!packing.Contains('F') || packing.Trim() == "")
                 {
-                    if (!hasSetColumn)
-                    {
-                        setDataColumn(dt, rdr);
-                    }
-                    hasSetColumn = true;
-                    DataRow dr = dt.NewRow();
-                    for (int i = 0; i < rdr.FieldCount; i++)
-                    {
-                        dr[i] = rdr[i];
-                    }
-                    dt.Rows.Add(dr);
+                    return;
                 }
+                dt.Clear();
+
+                var goodsName = cmb_GoodsName.Text.Trim();
+                var shipName = tb_ShipName.Text.Trim();
+                var havenID = tb_HavenID.Text.Trim();
+                var weightMin = tb_WeightMin.Text.Trim();
+                var weightMax = tb_WeightMax.Text.Trim();
+                var outdiaMin = tb_OutdiaMin.Text.Trim();
+                var outdiaMax = tb_OutdiaMax.Text.Trim();
+                var widthMin = tb_WidthMin.Text.Trim();
+                var widthMax = tb_WidthMax.Text.Trim();
+
+                long XMax = 400000;
+                long XMin = 400000;
+                if (packing == "Z53A1" || packing == "Z53A2")
+                {
+                    //max  392292 392271
+                    //min 250499
+                    XMax = 439400;
+                    XMin = 250300;
+                }
+                if (packing == "Z52A1" || packing == "Z52A2")
+                {
+                    //mini 450295 450292 450280
+                    //min  308856  250499
+                    XMax = 450300;
+                    XMin = 250300;
+                }
+                if (packing == "Z51A1" || packing == "Z51A2")
+                {
+                    //max   450671 450681 450671
+                    //min 308785
+                    XMax = 450800;
+                    XMin = 308500;
+                }
+                string sqlText_All = @" SELECT 0 AS CHECK_COLUMN, P1.GOODS_NAME, P1.GOODS_CODE, P2.SHIP_NAME ,P2.HAVEN_ID, C.MAT_NO AS COIL_NO, A.LOT_NO as LOT_NO, ";
+                sqlText_All += " C.BAY_NO, C.STOCK_NO, B.WEIGHT, B.WIDTH, B.INDIA, B.OUTDIA, D.X_CENTER, D.Y_CENTER, C.Z_CENTER , B.ACT_WEIGHT, B.ACT_WIDTH ";
+                sqlText_All += " FROM UACS_YARDMAP_STOCK_DEFINE C ";
+                sqlText_All += " LEFT JOIN UACS_YARDMAP_COIL B ON C.MAT_NO = B.COIL_NO ";
+                sqlText_All += " LEFT JOIN UACS_PLAN_L3PICK A ON C.MAT_NO = A.COIL_NO ";
+                sqlText_All += " LEFT JOIN UACS_YARDMAP_SADDLE_STOCK E ON C.STOCK_NO = E.STOCK_NO ";
+                sqlText_All += " LEFT JOIN UACS_YARDMAP_SADDLE_DEFINE D  ON E.SADDLE_NO = D.SADDLE_NO ";
+
+                sqlText_All += " LEFT JOIN UACS_PLAN_OUT_DETAIL P1 ON C.MAT_NO = P1.MAT_NO ";
+                sqlText_All += " LEFT JOIN UACS_PLAN_OUT P2 ON P1.PLAN_NO = P2.PLAN_NO ";
+                //sqlText_All += " WHERE  C.BAY_NO  like '" + packing.Substring(0, 3) + "%' ";
+                
+
+                if (parkNO.Contains("FT1"))
+                {
+                    sqlText_All += " WHERE  C.BAY_NO = 'A-1' ";
+                }
+                else if (parkNO.Contains("FT3"))
+                {
+                    sqlText_All += " WHERE  C.BAY_NO = 'C-1' ";
+                }
+
+                sqlText_All += " AND C.STOCK_STATUS = 2 AND C.LOCK_FLAG = 0 AND C.MAT_NO IS NOT NULL  ";
+                if (packing.Contains("Z5"))
+                {
+
+                    sqlText_All += " AND D.X_CENTER >" + XMin.ToString();
+                    sqlText_All += " AND D.X_CENTER <" + XMax.ToString();
+                }
+
+
+                if (planNo == "")
+                {
+
+                }
+                else if (planNo.Trim().Length > 3)
+                {
+                    sqlText_All += " AND A.LOT_NO  like '" + "%" + planNo + "%' ";
+                }
+
+                if (!string.IsNullOrEmpty(goodsName) && !goodsName.Equals("全部"))
+                {
+                    sqlText_All += " AND P1.GOODS_NAME LIKE '%" + goodsName + "%' ";
+                }
+                if (!string.IsNullOrEmpty(shipName))
+                {
+                    sqlText_All += " AND P2.SHIP_NAME LIKE '%" + shipName + "%' ";
+                }
+                if (!string.IsNullOrEmpty(havenID))
+                {
+                    sqlText_All += " AND P2.HAVEN_ID LIKE '%" + havenID + "%' ";
+                }
+
+                if ((!string.IsNullOrEmpty(weightMax.Trim()) && !string.IsNullOrEmpty(weightMin.Trim())) && (!weightMax.Equals("999999") && !weightMin.Equals("0")))
+                {
+                    sqlText_All += " AND B.WEIGHT BETWEEN " + Convert.ToInt32(weightMin) + " AND " + Convert.ToInt32(weightMax) + " ";
+                }
+                if ((!string.IsNullOrEmpty(outdiaMax.Trim()) && !string.IsNullOrEmpty(outdiaMin.Trim())) && (!outdiaMax.Equals("999999") && !outdiaMin.Equals("0")))
+                {
+                    sqlText_All += " AND B.OUTDIA BETWEEN " + Convert.ToInt32(outdiaMin) + " AND " + Convert.ToInt32(outdiaMax) + " ";
+                }
+                if ((!string.IsNullOrEmpty(widthMax.Trim()) && !string.IsNullOrEmpty(widthMin.Trim())) && (!widthMax.Equals("999999") && !widthMin.Equals("0")))
+                {
+                    sqlText_All += " AND B.WIDTH BETWEEN " + Convert.ToInt32(widthMin) + " AND " + Convert.ToInt32(widthMax) + " ";
+                }
+
+                sqlText_All += " order by C.STOCK_NO DESC ";
+                using (IDataReader rdr = DBHelper.ExecuteReader(sqlText_All))
+                {
+                    while (rdr.Read())
+                    {
+                        if (!hasSetColumn)
+                        {
+                            setDataColumn(dt, rdr);
+                        }
+                        hasSetColumn = true;
+                        DataRow dr = dt.NewRow();
+                        for (int i = 0; i < rdr.FieldCount; i++)
+                        {
+                            dr[i] = rdr[i];
+                        }
+                        dt.Rows.Add(dr);
+                    }
+                }
+
+                this.dataGridView1.DataSource = dt;
+
+                dataGridView1.Columns["ACT_WEIGHT"].Visible = false;
+                dataGridView1.Columns["ACT_WIDTH"].Visible = false;
             }
+            catch (Exception ex)
+            {
 
-
-            this.dataGridView1.DataSource = dt;
-
-            dataGridView1.Columns["ACT_WEIGHT"].Visible = false;
-            dataGridView1.Columns["ACT_WIDTH"].Visible = false;
+                throw ex;
+            }
         }
+
+        /// <summary>
+        /// 绑定品名
+        /// </summary>
+        private void BindGoods()
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                dt.Columns.Add("GOODS_CODE");
+                dt.Columns.Add("GOODS_NAME");
+                DataRow dr = dt.NewRow();
+                dr = dt.NewRow();
+                dr["GOODS_CODE"] = "全部";
+                dr["GOODS_NAME"] = "全部";
+                dt.Rows.Add(dr);
+                string sqlText = @"SELECT GOODS_CODE, GOODS_NAME FROM UACS_PLAN_OUT_GOODS_DETAIL GROUP BY GOODS_CODE, GOODS_NAME;";
+                using (IDataReader rdr = DBHelper.ExecuteReader(sqlText))
+                {
+                    while (rdr.Read())
+                    {
+                        dr = dt.NewRow();
+                        dr["GOODS_CODE"] = rdr["GOODS_CODE"].ToString();
+                        dr["GOODS_NAME"] = rdr["GOODS_NAME"].ToString();
+                        dt.Rows.Add(dr);
+                    }
+                }
+                //dr = dt.NewRow();
+                //dr["ID"] = "SG99";
+                //dr["NAME"] = "SG99";
+                //dt.Rows.Add(dr);
+                //绑定数据
+                cmb_GoodsName.ValueMember = "GOODS_CODE";
+                cmb_GoodsName.DisplayMember = "GOODS_NAME";
+                cmb_GoodsName.DataSource = dt;
+                //根据text值选中项
+                this.cmb_GoodsName.SelectedIndex = 0;
+            }
+            catch (System.Exception)
+            {
+
+                throw;
+            }
+        }
+
+        /// <summary>
+        /// 绑定库位号
+        /// </summary>
+        private void BindBoxStockNO()
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                dt.Columns.Add("ID");
+                dt.Columns.Add("NAME");
+                DataRow dr = dt.NewRow();
+                dr = dt.NewRow();
+                dr["ID"] = "全部";
+                dr["NAME"] = "全部";
+                dt.Rows.Add(dr);
+                dr = dt.NewRow();
+                dr["ID"] = "A";
+                dr["NAME"] = "A";
+                dt.Rows.Add(dr);
+                dr = dt.NewRow();
+                dr["ID"] = "B";
+                dr["NAME"] = "B";
+                dt.Rows.Add(dr);
+                dr = dt.NewRow();
+                dr["ID"] = "C";
+                dr["NAME"] = "C";
+                dt.Rows.Add(dr);
+                dr = dt.NewRow();
+                dr["ID"] = "D";
+                dr["NAME"] = "D";
+                dt.Rows.Add(dr);
+                //string sqlText = @"SELECT GOODS_CODE, GOODS_NAME FROM UACS_PLAN_OUT_GOODS_DETAIL GROUP BY GOODS_CODE, GOODS_NAME;";
+                //using (IDataReader rdr = DBHelper.ExecuteReader(sqlText))
+                //{
+                //    while (rdr.Read())
+                //    {
+                //        dr = dt.NewRow();
+                //        dr["GOODS_CODE"] = rdr["GOODS_CODE"].ToString();
+                //        dr["GOODS_NAME"] = rdr["GOODS_NAME"].ToString();
+                //        dt.Rows.Add(dr);
+                //    }
+                //}
+                //dr = dt.NewRow();
+                //dr["ID"] = "SG99";
+                //dr["NAME"] = "SG99";
+                //dt.Rows.Add(dr);
+                //绑定数据
+                cmb_BoxStockNO.ValueMember = "ID";
+                cmb_BoxStockNO.DisplayMember = "NAME";
+                cmb_BoxStockNO.DataSource = dt;
+                //根据text值选中项
+                this.cmb_BoxStockNO.SelectedIndex = 0;
+            }
+            catch (System.Exception)
+            {
+
+                throw;
+            }
+        }
+
         /// <summary>
         /// 设置table的列
         /// </summary>
@@ -818,71 +983,85 @@ namespace UACSParking
         private void button1_Click(object sender, EventArgs e)
         {
             //提单
-            if (txtGetPlanNo.Text.Trim().Length > 3)
-            {            
-                    //改 
-                    //string strPacking = cbbPacking.Text.Trim().Substring(0, 3);
-                    //StringBuilder sbb = new StringBuilder(strPacking);
-                    //sbb.Append("-1");
+            //if (txtGetPlanNo.Text.Trim().Length > 3)
+            //{            
+            //改 
+            //string strPacking = cbbPacking.Text.Trim().Substring(0, 3);
+            //StringBuilder sbb = new StringBuilder(strPacking);
+            //sbb.Append("-1"); 
+            try
+            {
                 string toUpPlanNO = txtGetPlanNo.Text.ToUpper().Trim();
                 BindMatStock(parkNO, toUpPlanNO);
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
                     //
-                return;
-            }
-            else
-            {
-                txtGetPlanNo.Text = "";
-            }
+                //return;
+            //}
+            //else
+            //{
+            //    txtGetPlanNo.Text = "";
+            //}
             //库位
-            if (!txtBoxStockNO.Text.Contains('-') && txtGetMat.Text.Trim() == "")
+            //if (!txtBoxStockNO.Text.Contains('-') && txtGetMat.Text.Trim() == "")
+            //{
+            //    MessageBox.Show(string.Format("输入库位：{0}格式不合法，请重新输入，格式为：排-列。",txtBoxStockNO.Text));
+            //    txtBoxStockNO.Text = "";
+            //    return;
+            //}
+            //if (txtBoxStockNO.Text.Trim().Length >= 1 && txtGetMat.Text.Trim() == "")
+            if (!string.IsNullOrEmpty(cmb_BoxStockNO.Text.Trim()) && !cmb_BoxStockNO.Text.Trim().Equals("全部"))
             {
-                MessageBox.Show(string.Format("输入库位：{0}格式不合法，请重新输入，格式为：排-列。",txtBoxStockNO.Text));
-                txtBoxStockNO.Text = "";
-                return;
-            }
-            if (txtBoxStockNO.Text.Trim().Length >= 1 && txtGetMat.Text.Trim() == "")
-            {
-                string strStockNO = "";
-                string str0;
-                string str1;
-                string str2;
-                if (parkNO.Contains("FT1"))
-                {
-                    str0 = string.Format("{0}1", parkNO.Substring(0, 3));
-                }
-                else 
-                {
-                    str0 = string.Format("{0}3", parkNO.Substring(0, 3));
-                }
-                int index1=txtBoxStockNO.Text.Trim().IndexOf('-');
-                str1 = txtBoxStockNO.Text.Trim().Substring(0, index1);
-                //if (str1.Length == 1)
+                //string strStockNO = "";
+                //string str0;
+                //string str1;
+                //string str2;
+                //if (parkNO.Contains("FT1"))
                 //{
-                //    str1=string.Format("00{0}",str1);
+                //    str0 = string.Format("{0}1", parkNO.Substring(0, 3));
                 //}
-                //else if (str1.Length ==2)
+                //else 
                 //{
-                //    str1 = string.Format("0{0}", str1);
+                //    str0 = string.Format("{0}3", parkNO.Substring(0, 3));
                 //}
-                //else
-                //{
+                //int index1=txtBoxStockNO.Text.Trim().IndexOf('-');
+                //str1 = txtBoxStockNO.Text.Trim().Substring(0, index1);
+                ////if (str1.Length == 1)
+                ////{
+                ////    str1=string.Format("00{0}",str1);
+                ////}
+                ////else if (str1.Length ==2)
+                ////{
+                ////    str1 = string.Format("0{0}", str1);
+                ////}
+                ////else
+                ////{
 
-                //}
-                str2 = txtBoxStockNO.Text.Trim().Substring(index1 + 1);
-                //for (int i = str2.Length; i < 3; i++)
-                //{
-                //    str2 = string.Format("0{0}", str2);
-                    
-                //}
+                ////}
+                //str2 = txtBoxStockNO.Text.Trim().Substring(index1 + 1);
+                ////for (int i = str2.Length; i < 3; i++)
+                ////{
+                ////    str2 = string.Format("0{0}", str2);
 
-                //strStockNO = string.Format("{0}{1}{2}1", str0, str1, str2);
-                strStockNO = string.Format("{0}{1}{2}", str0, str1, str2);
-               // SelectDataGridViewRow(dataGridView1, txtBoxStockNO.Text.Trim(), "STOCK_NO");
+                ////}
+
+                ////strStockNO = string.Format("{0}{1}{2}1", str0, str1, str2);
+                //strStockNO = string.Format("{0}{1}{2}", str0, str1, str2);
+                //// SelectDataGridViewRow(dataGridView1, txtBoxStockNO.Text.Trim(), "STOCK_NO");
+
+                var stockno = Convert.ToChar(cmb_BoxStockNO.Text.Trim());
                 foreach (DataGridViewRow dgvRow in dataGridView1.Rows)
                 {
                     if (dgvRow.Cells["STOCK_NO"].Value != null)
                     {
-                        if (dgvRow.Cells["STOCK_NO"].Value.ToString() == strStockNO)
+                        string stockNoCellValue = dgvRow.Cells["STOCK_NO"].Value.ToString();
+                        //if (dgvRow.Cells["STOCK_NO"].Value.ToString() == strStockNO)
+                        // 检查字符串长度是否足够，并且第五个字符是否为D
+                        if (stockNoCellValue.Length >= 5 && stockNoCellValue[4] == stockno)
                         {
                             dataGridView1.FirstDisplayedScrollingRowIndex = dgvRow.Index;
                             dgvRow.Cells["STOCK_NO"].Selected = true;
@@ -908,7 +1087,7 @@ namespace UACSParking
                         }
                     }
                 }
-                MessageBox.Show(string.Format("没有找到指定的库位号：{0}", strStockNO));
+                //MessageBox.Show(string.Format("没有找到指定的库位号：{0}", stockno));
 
             }
             
@@ -1327,6 +1506,65 @@ namespace UACSParking
             return ret;
         }
         #endregion
+
+        #region 限制只能输入数字
+
+        
+
+        private void tb_WidthMin_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //如果输入的不是退格和数字，则屏蔽输入
+            if (!(e.KeyChar == '\b' || (e.KeyChar >= '0' && e.KeyChar <= '9')))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tb_WidthMax_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //如果输入的不是退格和数字，则屏蔽输入
+            if (!(e.KeyChar == '\b' || (e.KeyChar >= '0' && e.KeyChar <= '9')))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tb_OutdiaMin_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //如果输入的不是退格和数字，则屏蔽输入
+            if (!(e.KeyChar == '\b' || (e.KeyChar >= '0' && e.KeyChar <= '9')))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tb_OutdiaMax_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //如果输入的不是退格和数字，则屏蔽输入
+            if (!(e.KeyChar == '\b' || (e.KeyChar >= '0' && e.KeyChar <= '9')))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tb_WeightMin_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //如果输入的不是退格和数字，则屏蔽输入
+            if (!(e.KeyChar == '\b' || (e.KeyChar >= '0' && e.KeyChar <= '9')))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tb_WeightMax_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //如果输入的不是退格和数字，则屏蔽输入
+            if (!(e.KeyChar == '\b' || (e.KeyChar >= '0' && e.KeyChar <= '9')))
+            {
+                e.Handled = true;
+            }
+        }
+        #endregion        
     }
 
 
