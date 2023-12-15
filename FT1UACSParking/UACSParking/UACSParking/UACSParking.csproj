@@ -72,7 +72,7 @@
     </Reference>
     <Reference Include="Baosight.iSuperframe.TagService, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\iPlature\SF_HOME\app\form\Baosight.iSuperframe.TagService.dll</HintPath>
+      <HintPath>..\..\..\lib\SF_HOME\plugins\TagService_v1.0.0.0\Baosight.iSuperframe.TagService.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Baosight.iSuperframe.TagService.Controls, Version=1.0.5634.30853, Culture=neutral, processorArchitecture=MSIL">
@@ -122,10 +122,6 @@
     </Reference>
     <Reference Include="System.Xml">
       <Private>True</Private>
-    </Reference>
-    <Reference Include="UACSUtility, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\lib\SF_HOME\UACSUtility.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -425,6 +421,10 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\..\HMI_OF_REPOSITORIES\UACSUtility\UACSUtility.csproj">
+      <Project>{0a64a373-d92b-4a58-957b-074f196f5b5a}</Project>
+      <Name>UACSUtility</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ParkClassLibrary\ParkClassLibrary.csproj">
       <Project>{2ec69a15-9c22-4e66-8cd1-60eb77fbb252}</Project>
       <Name>ParkClassLibrary</Name>

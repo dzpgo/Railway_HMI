@@ -601,8 +601,13 @@ namespace FORMS_OF_REPOSITORIES
                 this.conRailwayCrane_3.BackColor = System.Drawing.SystemColors.Control;
                 Crane_3 = false;
             }
-        } 
+        }
         #endregion
 
+        private void bt_SaddleModifyRoll_Click(object sender, EventArgs e)
+        {
+            SaddleModifyRoll frm = new SaddleModifyRoll();
+            frm.ShowDialog();
+        }
     }
 }

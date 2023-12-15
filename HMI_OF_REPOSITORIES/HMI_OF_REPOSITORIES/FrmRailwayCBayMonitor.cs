@@ -554,9 +554,19 @@ namespace FORMS_OF_REPOSITORIES
                 this.conRailwayCrane_8.BackColor = System.Drawing.SystemColors.Control;
                 Crane_8 = false;
             }
-        } 
+        }
+
         #endregion
 
-
+        /// <summary>
+        /// 虚拟鞍座号
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void bt_SaddleModifyRoll_Click(object sender, EventArgs e)
+        {
+            SaddleModifyRoll frm = new SaddleModifyRoll();
+            frm.ShowDialog();
+        }
     }
 }

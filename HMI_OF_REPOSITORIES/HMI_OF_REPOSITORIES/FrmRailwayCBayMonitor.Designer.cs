@@ -53,6 +53,7 @@
             this.btnCraneIsShow = new System.Windows.Forms.Button();
             this.btnUpSaddle = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.bt_SaddleModifyRoll = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.plRailwayABay.SuspendLayout();
@@ -78,9 +79,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("微软雅黑", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label1.Location = new System.Drawing.Point(489, 10);
+            this.label1.Location = new System.Drawing.Point(795, 15);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(392, 42);
+            this.label1.Size = new System.Drawing.Size(587, 64);
             this.label1.TabIndex = 12;
             this.label1.Text = "产成品库C跨行车监控画面";
             // 
@@ -89,9 +91,10 @@
             this.panel1.BackColor = System.Drawing.Color.White;
             this.panel1.Controls.Add(this.tableLayoutPanel3);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel1.Location = new System.Drawing.Point(3, 65);
+            this.panel1.Location = new System.Drawing.Point(4, 99);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1364, 626);
+            this.panel1.Size = new System.Drawing.Size(2170, 959);
             this.panel1.TabIndex = 13;
             // 
             // tableLayoutPanel3
@@ -102,11 +105,12 @@
             this.tableLayoutPanel3.Controls.Add(this.panel6, 0, 1);
             this.tableLayoutPanel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel3.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 2;
             this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 247F));
-            this.tableLayoutPanel3.Size = new System.Drawing.Size(1364, 626);
+            this.tableLayoutPanel3.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 370F));
+            this.tableLayoutPanel3.Size = new System.Drawing.Size(2170, 959);
             this.tableLayoutPanel3.TabIndex = 2;
             // 
             // plRailwayABay
@@ -117,9 +121,10 @@
             this.plRailwayABay.BackColor = System.Drawing.Color.LightSteelBlue;
             this.plRailwayABay.Controls.Add(this.conRailwayCrane_8);
             this.plRailwayABay.Controls.Add(this.conRailwayCrane_7);
-            this.plRailwayABay.Location = new System.Drawing.Point(3, 3);
+            this.plRailwayABay.Location = new System.Drawing.Point(4, 4);
+            this.plRailwayABay.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.plRailwayABay.Name = "plRailwayABay";
-            this.plRailwayABay.Size = new System.Drawing.Size(1358, 373);
+            this.plRailwayABay.Size = new System.Drawing.Size(2162, 581);
             this.plRailwayABay.TabIndex = 0;
             // 
             // conRailwayCrane_8
@@ -128,10 +133,10 @@
             this.conRailwayCrane_8.CraneNO = "";
             this.conRailwayCrane_8.CranesDistain = ((long)(0));
             this.conRailwayCrane_8.CraneXAct = ((long)(0));
-            this.conRailwayCrane_8.Location = new System.Drawing.Point(673, 0);
-            this.conRailwayCrane_8.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.conRailwayCrane_8.Location = new System.Drawing.Point(1010, 0);
+            this.conRailwayCrane_8.Margin = new System.Windows.Forms.Padding(9, 12, 9, 12);
             this.conRailwayCrane_8.Name = "conRailwayCrane_8";
-            this.conRailwayCrane_8.Size = new System.Drawing.Size(45, 439);
+            this.conRailwayCrane_8.Size = new System.Drawing.Size(68, 658);
             this.conRailwayCrane_8.TabIndex = 4;
             // 
             // conRailwayCrane_7
@@ -140,10 +145,10 @@
             this.conRailwayCrane_7.CraneNO = "";
             this.conRailwayCrane_7.CranesDistain = ((long)(0));
             this.conRailwayCrane_7.CraneXAct = ((long)(0));
-            this.conRailwayCrane_7.Location = new System.Drawing.Point(489, 2);
-            this.conRailwayCrane_7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.conRailwayCrane_7.Location = new System.Drawing.Point(734, 3);
+            this.conRailwayCrane_7.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.conRailwayCrane_7.Name = "conRailwayCrane_7";
-            this.conRailwayCrane_7.Size = new System.Drawing.Size(45, 437);
+            this.conRailwayCrane_7.Size = new System.Drawing.Size(68, 656);
             this.conRailwayCrane_7.TabIndex = 3;
             // 
             // panel6
@@ -152,9 +157,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel6.Controls.Add(this.tableLayoutPanel2);
-            this.panel6.Location = new System.Drawing.Point(3, 382);
+            this.panel6.Location = new System.Drawing.Point(4, 593);
+            this.panel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(1358, 241);
+            this.panel6.Size = new System.Drawing.Size(2162, 362);
             this.panel6.TabIndex = 1;
             // 
             // tableLayoutPanel2
@@ -167,10 +173,11 @@
             this.tableLayoutPanel2.Controls.Add(this.conCraneStatus7, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(1358, 241);
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(2162, 362);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
             // conCraneStatus8
@@ -178,10 +185,10 @@
             this.conCraneStatus8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.conCraneStatus8.CraneNO = "";
             this.conCraneStatus8.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.conCraneStatus8.Location = new System.Drawing.Point(456, 5);
-            this.conCraneStatus8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.conCraneStatus8.Location = new System.Drawing.Point(726, 8);
+            this.conCraneStatus8.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.conCraneStatus8.Name = "conCraneStatus8";
-            this.conCraneStatus8.Size = new System.Drawing.Size(444, 231);
+            this.conCraneStatus8.Size = new System.Drawing.Size(708, 346);
             this.conCraneStatus8.TabIndex = 8;
             // 
             // conCraneStatus7
@@ -189,10 +196,10 @@
             this.conCraneStatus7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.conCraneStatus7.CraneNO = "";
             this.conCraneStatus7.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.conCraneStatus7.Location = new System.Drawing.Point(4, 5);
-            this.conCraneStatus7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.conCraneStatus7.Location = new System.Drawing.Point(6, 8);
+            this.conCraneStatus7.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
             this.conCraneStatus7.Name = "conCraneStatus7";
-            this.conCraneStatus7.Size = new System.Drawing.Size(444, 231);
+            this.conCraneStatus7.Size = new System.Drawing.Size(708, 346);
             this.conCraneStatus7.TabIndex = 7;
             // 
             // panel2
@@ -206,11 +213,13 @@
             this.panel2.Controls.Add(this.button3);
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.btnCraneIsShow);
+            this.panel2.Controls.Add(this.bt_SaddleModifyRoll);
             this.panel2.Controls.Add(this.btnUpSaddle);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(3, 697);
+            this.panel2.Location = new System.Drawing.Point(4, 1066);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1364, 41);
+            this.panel2.Size = new System.Drawing.Size(2170, 62);
             this.panel2.TabIndex = 14;
             // 
             // btnPhotogate_CD
@@ -219,9 +228,10 @@
             this.btnPhotogate_CD.BackColor = System.Drawing.Color.AliceBlue;
             this.btnPhotogate_CD.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnPhotogate_CD.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnPhotogate_CD.Location = new System.Drawing.Point(356, 3);
+            this.btnPhotogate_CD.Location = new System.Drawing.Point(534, 4);
+            this.btnPhotogate_CD.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnPhotogate_CD.Name = "btnPhotogate_CD";
-            this.btnPhotogate_CD.Size = new System.Drawing.Size(126, 35);
+            this.btnPhotogate_CD.Size = new System.Drawing.Size(189, 52);
             this.btnPhotogate_CD.TabIndex = 38;
             this.btnPhotogate_CD.Text = "CD区光电门:开";
             this.btnPhotogate_CD.UseVisualStyleBackColor = false;
@@ -233,9 +243,10 @@
             this.btnPhotogate_AB.BackColor = System.Drawing.Color.AliceBlue;
             this.btnPhotogate_AB.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnPhotogate_AB.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnPhotogate_AB.Location = new System.Drawing.Point(224, 3);
+            this.btnPhotogate_AB.Location = new System.Drawing.Point(336, 4);
+            this.btnPhotogate_AB.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnPhotogate_AB.Name = "btnPhotogate_AB";
-            this.btnPhotogate_AB.Size = new System.Drawing.Size(126, 35);
+            this.btnPhotogate_AB.Size = new System.Drawing.Size(189, 52);
             this.btnPhotogate_AB.TabIndex = 37;
             this.btnPhotogate_AB.Text = "AB区光电门:开";
             this.btnPhotogate_AB.UseVisualStyleBackColor = false;
@@ -247,9 +258,10 @@
             this.btnLoaderChange2.BackColor = System.Drawing.Color.AliceBlue;
             this.btnLoaderChange2.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnLoaderChange2.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnLoaderChange2.Location = new System.Drawing.Point(967, 3);
+            this.btnLoaderChange2.Location = new System.Drawing.Point(1450, 4);
+            this.btnLoaderChange2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnLoaderChange2.Name = "btnLoaderChange2";
-            this.btnLoaderChange2.Size = new System.Drawing.Size(114, 35);
+            this.btnLoaderChange2.Size = new System.Drawing.Size(171, 52);
             this.btnLoaderChange2.TabIndex = 36;
             this.btnLoaderChange2.Text = "8#吊具：吸盘";
             this.btnLoaderChange2.UseVisualStyleBackColor = false;
@@ -260,9 +272,10 @@
             this.btnLoaderChange1.BackColor = System.Drawing.Color.AliceBlue;
             this.btnLoaderChange1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnLoaderChange1.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnLoaderChange1.Location = new System.Drawing.Point(847, 3);
+            this.btnLoaderChange1.Location = new System.Drawing.Point(1270, 4);
+            this.btnLoaderChange1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnLoaderChange1.Name = "btnLoaderChange1";
-            this.btnLoaderChange1.Size = new System.Drawing.Size(114, 35);
+            this.btnLoaderChange1.Size = new System.Drawing.Size(171, 52);
             this.btnLoaderChange1.TabIndex = 35;
             this.btnLoaderChange1.Text = "7#吊具：夹钳";
             this.btnLoaderChange1.UseVisualStyleBackColor = false;
@@ -273,9 +286,10 @@
             this.btnCrane_2_WaterStatus.BackColor = System.Drawing.Color.AliceBlue;
             this.btnCrane_2_WaterStatus.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCrane_2_WaterStatus.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnCrane_2_WaterStatus.Location = new System.Drawing.Point(607, 3);
+            this.btnCrane_2_WaterStatus.Location = new System.Drawing.Point(910, 4);
+            this.btnCrane_2_WaterStatus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCrane_2_WaterStatus.Name = "btnCrane_2_WaterStatus";
-            this.btnCrane_2_WaterStatus.Size = new System.Drawing.Size(114, 35);
+            this.btnCrane_2_WaterStatus.Size = new System.Drawing.Size(171, 52);
             this.btnCrane_2_WaterStatus.TabIndex = 33;
             this.btnCrane_2_WaterStatus.Text = "8#空调水排放";
             this.btnCrane_2_WaterStatus.UseVisualStyleBackColor = false;
@@ -286,9 +300,10 @@
             this.btnCrane_1_WaterStatus.BackColor = System.Drawing.Color.AliceBlue;
             this.btnCrane_1_WaterStatus.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCrane_1_WaterStatus.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnCrane_1_WaterStatus.Location = new System.Drawing.Point(487, 3);
+            this.btnCrane_1_WaterStatus.Location = new System.Drawing.Point(730, 4);
+            this.btnCrane_1_WaterStatus.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCrane_1_WaterStatus.Name = "btnCrane_1_WaterStatus";
-            this.btnCrane_1_WaterStatus.Size = new System.Drawing.Size(114, 35);
+            this.btnCrane_1_WaterStatus.Size = new System.Drawing.Size(171, 52);
             this.btnCrane_1_WaterStatus.TabIndex = 32;
             this.btnCrane_1_WaterStatus.Text = "7#空调水排放";
             this.btnCrane_1_WaterStatus.UseVisualStyleBackColor = false;
@@ -299,9 +314,10 @@
             this.button3.BackColor = System.Drawing.Color.AliceBlue;
             this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button3.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button3.Location = new System.Drawing.Point(114, 3);
+            this.button3.Location = new System.Drawing.Point(171, 4);
+            this.button3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(104, 35);
+            this.button3.Size = new System.Drawing.Size(156, 52);
             this.button3.TabIndex = 30;
             this.button3.Text = "开北道闸";
             this.button3.UseVisualStyleBackColor = false;
@@ -313,9 +329,10 @@
             this.button1.BackColor = System.Drawing.Color.AliceBlue;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.button1.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.button1.Location = new System.Drawing.Point(4, 3);
+            this.button1.Location = new System.Drawing.Point(6, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(104, 35);
+            this.button1.Size = new System.Drawing.Size(156, 52);
             this.button1.TabIndex = 28;
             this.button1.Text = "开南道闸";
             this.button1.UseVisualStyleBackColor = false;
@@ -327,9 +344,10 @@
             this.btnCraneIsShow.BackColor = System.Drawing.Color.AliceBlue;
             this.btnCraneIsShow.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCraneIsShow.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnCraneIsShow.Location = new System.Drawing.Point(1253, 3);
+            this.btnCraneIsShow.Location = new System.Drawing.Point(2004, 4);
+            this.btnCraneIsShow.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnCraneIsShow.Name = "btnCraneIsShow";
-            this.btnCraneIsShow.Size = new System.Drawing.Size(104, 35);
+            this.btnCraneIsShow.Size = new System.Drawing.Size(156, 52);
             this.btnCraneIsShow.TabIndex = 27;
             this.btnCraneIsShow.Text = "行车隐藏";
             this.btnCraneIsShow.UseVisualStyleBackColor = false;
@@ -341,9 +359,10 @@
             this.btnUpSaddle.BackColor = System.Drawing.Color.AliceBlue;
             this.btnUpSaddle.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnUpSaddle.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            this.btnUpSaddle.Location = new System.Drawing.Point(1143, 3);
+            this.btnUpSaddle.Location = new System.Drawing.Point(1838, 4);
+            this.btnUpSaddle.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnUpSaddle.Name = "btnUpSaddle";
-            this.btnUpSaddle.Size = new System.Drawing.Size(104, 35);
+            this.btnUpSaddle.Size = new System.Drawing.Size(156, 52);
             this.btnUpSaddle.TabIndex = 14;
             this.btnUpSaddle.Text = "检修";
             this.btnUpSaddle.UseVisualStyleBackColor = false;
@@ -359,26 +378,43 @@
             this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 3;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.02965F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 90.97035F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1370, 741);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 69F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 30F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(2178, 1132);
             this.tableLayoutPanel1.TabIndex = 3;
+            // 
+            // bt_SaddleModifyRoll
+            // 
+            this.bt_SaddleModifyRoll.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.bt_SaddleModifyRoll.BackColor = System.Drawing.Color.AliceBlue;
+            this.bt_SaddleModifyRoll.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.bt_SaddleModifyRoll.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.bt_SaddleModifyRoll.Location = new System.Drawing.Point(1674, 4);
+            this.bt_SaddleModifyRoll.Margin = new System.Windows.Forms.Padding(4);
+            this.bt_SaddleModifyRoll.Name = "bt_SaddleModifyRoll";
+            this.bt_SaddleModifyRoll.Size = new System.Drawing.Size(156, 52);
+            this.bt_SaddleModifyRoll.TabIndex = 14;
+            this.bt_SaddleModifyRoll.Text = "虚拟库位";
+            this.bt_SaddleModifyRoll.UseVisualStyleBackColor = false;
+            this.bt_SaddleModifyRoll.Click += new System.EventHandler(this.bt_SaddleModifyRoll_Click);
             // 
             // FrmRailwayCBayMonitor
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1370, 741);
+            this.ClientSize = new System.Drawing.Size(2178, 1132);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "FrmRailwayCBayMonitor";
             this.Text = "铁路库监控主画面";
             this.TabActivated += new System.EventHandler(this.MyTabActivated);
@@ -422,5 +458,6 @@
         private System.Windows.Forms.Button btnLoaderChange1;
         private System.Windows.Forms.Button btnPhotogate_CD;
         private System.Windows.Forms.Button btnPhotogate_AB;
+        private System.Windows.Forms.Button bt_SaddleModifyRoll;
     }
 }

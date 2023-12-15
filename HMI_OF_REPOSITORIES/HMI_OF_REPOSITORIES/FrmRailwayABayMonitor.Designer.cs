@@ -35,8 +35,14 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.plRailwayABay = new System.Windows.Forms.Panel();
+            this.conRailwayCrane_3 = new CONTROLS_OF_REPOSITORIES.conCraneDisplay();
+            this.conRailwayCrane_2 = new CONTROLS_OF_REPOSITORIES.conCraneDisplay();
+            this.conRailwayCrane_1 = new CONTROLS_OF_REPOSITORIES.conCraneDisplay();
             this.panel6 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.conCraneStatus3 = new CONTROLS_OF_REPOSITORIES.conCraneStatus();
+            this.conCraneStatus2 = new CONTROLS_OF_REPOSITORIES.conCraneStatus();
+            this.conCraneStatus1 = new CONTROLS_OF_REPOSITORIES.conCraneStatus();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnPhotogate_CD = new System.Windows.Forms.Button();
             this.btnPhotogate_AB = new System.Windows.Forms.Button();
@@ -50,12 +56,7 @@
             this.btnCraneIsShow = new System.Windows.Forms.Button();
             this.btnUpSaddle = new System.Windows.Forms.Button();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.conRailwayCrane_3 = new CONTROLS_OF_REPOSITORIES.conCraneDisplay();
-            this.conRailwayCrane_2 = new CONTROLS_OF_REPOSITORIES.conCraneDisplay();
-            this.conRailwayCrane_1 = new CONTROLS_OF_REPOSITORIES.conCraneDisplay();
-            this.conCraneStatus3 = new CONTROLS_OF_REPOSITORIES.conCraneStatus();
-            this.conCraneStatus2 = new CONTROLS_OF_REPOSITORIES.conCraneStatus();
-            this.conCraneStatus1 = new CONTROLS_OF_REPOSITORIES.conCraneStatus();
+            this.bt_SaddleModifyRoll = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel3.SuspendLayout();
             this.plRailwayABay.SuspendLayout();
@@ -130,6 +131,42 @@
             this.plRailwayABay.Size = new System.Drawing.Size(2039, 562);
             this.plRailwayABay.TabIndex = 0;
             // 
+            // conRailwayCrane_3
+            // 
+            this.conRailwayCrane_3.BackColor = System.Drawing.SystemColors.Control;
+            this.conRailwayCrane_3.CraneNO = "";
+            this.conRailwayCrane_3.CranesDistain = ((long)(0));
+            this.conRailwayCrane_3.CraneXAct = ((long)(0));
+            this.conRailwayCrane_3.Location = new System.Drawing.Point(1244, -4);
+            this.conRailwayCrane_3.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.conRailwayCrane_3.Name = "conRailwayCrane_3";
+            this.conRailwayCrane_3.Size = new System.Drawing.Size(70, 658);
+            this.conRailwayCrane_3.TabIndex = 5;
+            // 
+            // conRailwayCrane_2
+            // 
+            this.conRailwayCrane_2.BackColor = System.Drawing.SystemColors.Control;
+            this.conRailwayCrane_2.CraneNO = "";
+            this.conRailwayCrane_2.CranesDistain = ((long)(0));
+            this.conRailwayCrane_2.CraneXAct = ((long)(0));
+            this.conRailwayCrane_2.Location = new System.Drawing.Point(1010, 0);
+            this.conRailwayCrane_2.Margin = new System.Windows.Forms.Padding(9, 12, 9, 12);
+            this.conRailwayCrane_2.Name = "conRailwayCrane_2";
+            this.conRailwayCrane_2.Size = new System.Drawing.Size(68, 658);
+            this.conRailwayCrane_2.TabIndex = 4;
+            // 
+            // conRailwayCrane_1
+            // 
+            this.conRailwayCrane_1.BackColor = System.Drawing.SystemColors.Control;
+            this.conRailwayCrane_1.CraneNO = "";
+            this.conRailwayCrane_1.CranesDistain = ((long)(0));
+            this.conRailwayCrane_1.CraneXAct = ((long)(0));
+            this.conRailwayCrane_1.Location = new System.Drawing.Point(734, 3);
+            this.conRailwayCrane_1.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.conRailwayCrane_1.Name = "conRailwayCrane_1";
+            this.conRailwayCrane_1.Size = new System.Drawing.Size(68, 656);
+            this.conRailwayCrane_1.TabIndex = 3;
+            // 
             // panel6
             // 
             this.panel6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -160,8 +197,42 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(2039, 362);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
+            // conCraneStatus3
+            // 
+            this.conCraneStatus3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.conCraneStatus3.CraneNO = "";
+            this.conCraneStatus3.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.conCraneStatus3.Location = new System.Drawing.Point(1364, 8);
+            this.conCraneStatus3.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.conCraneStatus3.Name = "conCraneStatus3";
+            this.conCraneStatus3.Size = new System.Drawing.Size(669, 346);
+            this.conCraneStatus3.TabIndex = 9;
+            // 
+            // conCraneStatus2
+            // 
+            this.conCraneStatus2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.conCraneStatus2.CraneNO = "";
+            this.conCraneStatus2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.conCraneStatus2.Location = new System.Drawing.Point(685, 8);
+            this.conCraneStatus2.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.conCraneStatus2.Name = "conCraneStatus2";
+            this.conCraneStatus2.Size = new System.Drawing.Size(667, 346);
+            this.conCraneStatus2.TabIndex = 8;
+            // 
+            // conCraneStatus1
+            // 
+            this.conCraneStatus1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.conCraneStatus1.CraneNO = "";
+            this.conCraneStatus1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.conCraneStatus1.Location = new System.Drawing.Point(6, 8);
+            this.conCraneStatus1.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            this.conCraneStatus1.Name = "conCraneStatus1";
+            this.conCraneStatus1.Size = new System.Drawing.Size(667, 346);
+            this.conCraneStatus1.TabIndex = 7;
+            // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.bt_SaddleModifyRoll);
             this.panel2.Controls.Add(this.btnPhotogate_CD);
             this.panel2.Controls.Add(this.btnPhotogate_AB);
             this.panel2.Controls.Add(this.btnLoaderChange2);
@@ -365,74 +436,20 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(2055, 1112);
             this.tableLayoutPanel1.TabIndex = 3;
             // 
-            // conRailwayCrane_3
+            // bt_SaddleModifyRoll
             // 
-            this.conRailwayCrane_3.BackColor = System.Drawing.SystemColors.Control;
-            this.conRailwayCrane_3.CraneNO = "";
-            this.conRailwayCrane_3.CranesDistain = ((long)(0));
-            this.conRailwayCrane_3.CraneXAct = ((long)(0));
-            this.conRailwayCrane_3.Location = new System.Drawing.Point(1244, -4);
-            this.conRailwayCrane_3.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
-            this.conRailwayCrane_3.Name = "conRailwayCrane_3";
-            this.conRailwayCrane_3.Size = new System.Drawing.Size(70, 658);
-            this.conRailwayCrane_3.TabIndex = 5;
-            // 
-            // conRailwayCrane_2
-            // 
-            this.conRailwayCrane_2.BackColor = System.Drawing.SystemColors.Control;
-            this.conRailwayCrane_2.CraneNO = "";
-            this.conRailwayCrane_2.CranesDistain = ((long)(0));
-            this.conRailwayCrane_2.CraneXAct = ((long)(0));
-            this.conRailwayCrane_2.Location = new System.Drawing.Point(1010, 0);
-            this.conRailwayCrane_2.Margin = new System.Windows.Forms.Padding(9, 12, 9, 12);
-            this.conRailwayCrane_2.Name = "conRailwayCrane_2";
-            this.conRailwayCrane_2.Size = new System.Drawing.Size(68, 658);
-            this.conRailwayCrane_2.TabIndex = 4;
-            // 
-            // conRailwayCrane_1
-            // 
-            this.conRailwayCrane_1.BackColor = System.Drawing.SystemColors.Control;
-            this.conRailwayCrane_1.CraneNO = "";
-            this.conRailwayCrane_1.CranesDistain = ((long)(0));
-            this.conRailwayCrane_1.CraneXAct = ((long)(0));
-            this.conRailwayCrane_1.Location = new System.Drawing.Point(734, 3);
-            this.conRailwayCrane_1.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
-            this.conRailwayCrane_1.Name = "conRailwayCrane_1";
-            this.conRailwayCrane_1.Size = new System.Drawing.Size(68, 656);
-            this.conRailwayCrane_1.TabIndex = 3;
-            // 
-            // conCraneStatus3
-            // 
-            this.conCraneStatus3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.conCraneStatus3.CraneNO = "";
-            this.conCraneStatus3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.conCraneStatus3.Location = new System.Drawing.Point(1364, 8);
-            this.conCraneStatus3.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
-            this.conCraneStatus3.Name = "conCraneStatus3";
-            this.conCraneStatus3.Size = new System.Drawing.Size(669, 346);
-            this.conCraneStatus3.TabIndex = 9;
-            // 
-            // conCraneStatus2
-            // 
-            this.conCraneStatus2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.conCraneStatus2.CraneNO = "";
-            this.conCraneStatus2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.conCraneStatus2.Location = new System.Drawing.Point(685, 8);
-            this.conCraneStatus2.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
-            this.conCraneStatus2.Name = "conCraneStatus2";
-            this.conCraneStatus2.Size = new System.Drawing.Size(667, 346);
-            this.conCraneStatus2.TabIndex = 8;
-            // 
-            // conCraneStatus1
-            // 
-            this.conCraneStatus1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.conCraneStatus1.CraneNO = "";
-            this.conCraneStatus1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.conCraneStatus1.Location = new System.Drawing.Point(6, 8);
-            this.conCraneStatus1.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
-            this.conCraneStatus1.Name = "conCraneStatus1";
-            this.conCraneStatus1.Size = new System.Drawing.Size(667, 346);
-            this.conCraneStatus1.TabIndex = 7;
+            this.bt_SaddleModifyRoll.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.bt_SaddleModifyRoll.BackColor = System.Drawing.Color.AliceBlue;
+            this.bt_SaddleModifyRoll.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.bt_SaddleModifyRoll.Font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            this.bt_SaddleModifyRoll.Location = new System.Drawing.Point(1551, 4);
+            this.bt_SaddleModifyRoll.Margin = new System.Windows.Forms.Padding(4);
+            this.bt_SaddleModifyRoll.Name = "bt_SaddleModifyRoll";
+            this.bt_SaddleModifyRoll.Size = new System.Drawing.Size(156, 52);
+            this.bt_SaddleModifyRoll.TabIndex = 39;
+            this.bt_SaddleModifyRoll.Text = "虚拟库位";
+            this.bt_SaddleModifyRoll.UseVisualStyleBackColor = false;
+            this.bt_SaddleModifyRoll.Click += new System.EventHandler(this.bt_SaddleModifyRoll_Click);
             // 
             // FrmRailwayABayMonitor
             // 
@@ -487,5 +504,6 @@
         private System.Windows.Forms.Button btnLoaderChange1;
         private System.Windows.Forms.Button btnPhotogate_CD;
         private System.Windows.Forms.Button btnPhotogate_AB;
+        private System.Windows.Forms.Button bt_SaddleModifyRoll;
     }
 }

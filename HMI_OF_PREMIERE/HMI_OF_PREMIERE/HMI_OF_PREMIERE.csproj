@@ -83,10 +83,6 @@
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="UACSUtility, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\iPlature\SF_HOME\app\form\UACSUtility.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Form1.cs">
@@ -142,6 +138,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\HMI_OF_REPOSITORIES\UACSUtility\UACSUtility.csproj">
+      <Project>{0a64a373-d92b-4a58-957b-074f196f5b5a}</Project>
+      <Name>UACSUtility</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CONTROLS_OF_PREMIERE\CONTROLS_OF_PREMIERE.csproj">
       <Project>{00DDF2BA-7A27-4AF1-AF78-867040E30954}</Project>
       <Name>CONTROLS_OF_PREMIERE</Name>

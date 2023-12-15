@@ -208,6 +208,12 @@
     <Compile Include="Recondition.Designer.cs">
       <DependentUpon>Recondition.cs</DependentUpon>
     </Compile>
+    <Compile Include="SaddleModifyRoll.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SaddleModifyRoll.Designer.cs">
+      <DependentUpon>SaddleModifyRoll.cs</DependentUpon>
+    </Compile>
     <Compile Include="StowageMessage.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -332,6 +338,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Recondition.resx">
       <DependentUpon>Recondition.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SaddleModifyRoll.resx">
+      <DependentUpon>SaddleModifyRoll.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StowageMessage.resx">
       <DependentUpon>StowageMessage.cs</DependentUpon>
